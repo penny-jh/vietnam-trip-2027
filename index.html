@@ -1,119 +1,1446 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#f3e5dc">
-<title>越南慢慢旅行｜胡志明 × 芽莊 2027</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap');
-:root{--tea:#f3e5dc;--cream:#fbf7f2;--pink:#e8c6c5;--yellow:#f7e6a8;--ink:#72594c;--muted:#9b8173;--white:#fff}
-*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#fbf5ef,#f7e9e4 55%,#fff9e9);color:var(--ink);font-family:"Zen Maru Gothic","Noto Sans TC",sans-serif}
-header{padding:26px 18px 20px;background:linear-gradient(145deg,#f2dfd4,#f8e9e5);border-radius:0 0 30px 30px}
-.wrap{max-width:760px;margin:auto}.eyebrow{font-size:11px;letter-spacing:2px;color:#a18170;font-weight:700}.hero h1{font-size:clamp(27px,7vw,42px);line-height:1.25;margin:8px 0 3px}.hero p{margin:0;color:#a47c78}.hero-art{margin-top:18px;min-height:155px;border-radius:22px;background:linear-gradient(120deg,#e7c8c0,#f7e8d4 52%,#d7e8df);display:grid;place-items:center;overflow:hidden;position:relative}.hero-art:before{content:"🌴";font-size:76px;position:absolute;left:8%;bottom:-8px;opacity:.85}.hero-art:after{content:"☀️";font-size:65px;position:absolute;right:9%;top:10px}.hero-art span{font-size:clamp(19px,5vw,30px);font-weight:900;color:#fff;text-shadow:0 2px 10px #9e7c7080;z-index:1}
-main{padding:16px 14px 100px}.tabs{display:flex;gap:8px;position:sticky;top:8px;z-index:5;background:#fbf7f2dd;backdrop-filter:blur(12px);padding:7px;border-radius:18px;margin:0 0 16px;box-shadow:0 4px 18px #80665312}.tabs button,.daybtn,.action{border:0;border-radius:14px;padding:11px 13px;font:inherit;font-weight:700;cursor:pointer}.tabs button{flex:1;background:#fff;color:var(--muted)}.tabs button.active{background:#dcb8b6;color:#fff}
-.panel{display:none}.panel.active{display:block}.daygrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}.daybtn{background:#fff;border:1px solid #eadbd2;color:var(--ink);font-size:13px}.daybtn.active{background:#f0d9d5;border:2px solid #c89591}.daybtn small{display:block;font-weight:400;color:#a08476;margin-top:3px}.dayhead,.card,.guidebox,.weatherbox{background:#fff;border:1px solid #efe3dc;border-radius:21px;padding:16px;margin:12px 0;box-shadow:0 5px 18px #8066530c}.dayhead{background:#f3e5dc}.dayhead h2{margin:0 0 4px;font-size:22px}.sub{font-size:12px;color:var(--muted)}.card h3{margin:8px 0 6px;font-size:18px}.card p{margin:5px 0 12px;line-height:1.7;font-size:14px;color:#856e61}.tag{display:inline-block;border-radius:99px;padding:4px 10px;background:#f8edcf;color:#9b7b35;font-size:11px;font-weight:700}.category{background:#f4e9e2;color:#997867;margin-right:6px}.reminder{background:#fff8df;padding:11px;border-radius:13px;font-size:13px;line-height:1.7;margin:10px 0;color:#876f45}.manage{display:flex;gap:8px;margin-top:10px}.manage button{flex:1;border:1px solid #eadbd2;background:#fff8f4;color:#856e61;border-radius:12px;padding:9px;font:inherit;font-size:13px;cursor:pointer}.manage button.danger{background:#fff1ee;color:#a45f58}.meta{font-size:12px;line-height:1.7;color:#927d70;margin:8px 0}.action{display:block;text-align:center;text-decoration:none;background:#f0e2d9;color:#816657;margin-top:10px}.guidebox h3,.weatherbox h3{margin:0 0 10px}.guidebox p,.weatherbox p,.guidebox li{font-size:14px;line-height:1.8;color:#856e61}.guidebox table{width:100%;border-collapse:collapse;font-size:13px}.guidebox td,.guidebox th{padding:8px;border-bottom:1px solid #f0e5de;text-align:left}.bottom{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);width:min(92%,440px);background:#fffE;border:1px solid #eee0d7;border-radius:22px;padding:10px;text-align:center;color:#a18170;font-size:11px;box-shadow:0 8px 28px #604b3b20;backdrop-filter:blur(12px)}
-footer{text-align:center;color:#a78c7d;font-size:11px;padding:20px}
-@media(min-width:650px){main{padding-left:22px;padding-right:22px}.daygrid{grid-template-columns:repeat(6,1fr)}}
-</style></head>
-<body>
-<header><div class="wrap hero"><div class="eyebrow">MY VIETNAM TRAVEL BOOK · VOL. 2027</div><h1>越南慢慢旅行 ♡</h1><p>胡志明 × 芽莊　｜　2027.04.02 — 04.07 · 6 DAYS</p><div class="hero-art"><span>SAIGON × NHA TRANG</span></div></div></header>
-<main class="wrap">
-<nav class="tabs"><button class="active" data-tab="itinerary">行程</button><button data-tab="guide">指南</button><button data-tab="weather">天氣</button></nav>
-<section id="itinerary" class="panel active"><div class="eyebrow">DAILY ITINERARY</div><div id="days" class="daygrid"></div><div id="daycontent"></div></section>
-<section id="guide" class="panel">
-<div class="eyebrow">TRAVEL GUIDE</div>
-<div class="guidebox"><h3>🚌 BOMA Resort 飯店接駁車</h3><p>依你提供的 PDF 第 2 頁整理；出發前請向飯店確認 2027 實際班次及預約方式。</p><b>Beach Shuttle｜BOMA → ANA BEACH</b><table><tr><th>去程</th><th>回程</th></tr><tr><td>09:30</td><td>11:30</td></tr><tr><td>14:00</td><td>17:00</td></tr></table><br><b>City Center Shuttle</b><table><tr><th>目的地</th><th>去程</th><th>回程</th></tr><tr><td>Gold Coast Mall</td><td>10:30</td><td>14:35</td></tr><tr><td>AB Central Mall</td><td>10:30</td><td>14:30</td></tr><tr><td>Gold Coast Mall</td><td>14:00</td><td>16:35</td></tr><tr><td>AB Central Mall</td><td>14:00</td><td>16:30</td></tr></table></div>
-<div class="guidebox"><h3>🧘 BOMA 活動安排</h3><p>依 PDF 第 2 頁活動表：07:00–07:30 晨間瑜珈；07:30–09:00、10:00–12:00、14:00–15:00 為其他活動時段。實際內容、費用及預約以飯店公告為準。</p></div>
-<div class="guidebox"><h3>🧳 出發行李清單</h3><div id="packing"></div></div>
-<div class="guidebox"><h3>🚗 交通提醒</h3><p>胡志明市及芽莊可用 Grab 串接行程，芽莊優先確認飯店接駁車。原始 PDF 未提供自駕安排，因此停車與加油資訊均標示為待確認，不會臆測實際地點。</p></div>
-</section>
-<section id="weather" class="panel"><div class="eyebrow">WEATHER & OUTFIT</div>
-<div class="weatherbox"><h3>☀️ 4 月季節穿搭參考</h3><p>胡志明市與芽莊通常炎熱，實際逐日天氣需接近出發時查詢；以下不是 2027 即時預報。</p></div>
-<div class="weatherbox"><h3>🌸 胡志明市</h3><p>輕薄透氣上衣、短褲或長裙、舒適涼鞋。室內冷氣較強，可帶薄外套。別忘了防曬、太陽眼鏡及水壺。</p></div>
-<div class="weatherbox"><h3>🌴 芽莊</h3><p>泳衣、罩衫、透氣洋裝、涼鞋、遮陽帽及太陽眼鏡。午後可能有短暫降雨，可準備折疊傘。</p></div>
-<div class="weatherbox"><h3>🔎 出發前查詢</h3><p><a href="https://www.accuweather.com/" target="_blank" rel="noopener">AccuWeather 天氣預報</a></p></div>
-</section>
-<footer>♡ GOOD TRIPS, GOOD MEMORIES ♡<br>SAIGON × NHA TRANG · APRIL 2027</footer>
-</main><div class="bottom">♡ MY TRAVEL JOURNAL　·　SAVE YOUR MEMORIES ♡</div>
-<script>
-let days=[
-["04/02","FRI","胡志明市",[
-["酒店","Airbnb","抵達胡志明市，入住民宿、整理行李。","入住","拍攝民宿房間與旅行第一天的紀念照。","依民宿規定確認停車。","建議使用 Grab。"],
-["食物","Phở Việt Nam","品嚐越南經典河粉，開啟越南美食之旅。","必吃","拍攝河粉配料與桌面上的越南調味料。","停車資訊依分店確認。","Grab / 步行。"],
-["活動","Lisa Nail & Spa","安排美甲，享受抵達後的放鬆時光。","體驗","拍攝美甲成果與旅行穿搭合照。","停車資訊待確認。","Grab。"]]],
-["04/03","SAT","胡志明市",[
-["食物","Bánh Mì Huynh Hoa","品嚐胡志明知名越南法國麵包。","必吃","近距離拍攝豐富內餡與酥脆麵包。","停車資訊待確認。","建議 Grab。"],
-["食物","% Arabica · The Cafe Apartments","前往公寓咖啡大樓，享受咖啡與特色建築。","必拍","利用公寓外觀、窗戶與咖啡杯構圖。","周邊停車需另查。","建議步行串接周邊景點。"],
-["購物","The E.Y.E Saigon","選購特色帆布袋。","必買","拍攝帆布袋與街景穿搭照。","停車資訊待確認。","步行 / Grab。"],
-["景點","新定教堂","參觀胡志明市著名粉紅色教堂。","必拍","利用粉紅色外牆與藍天拍攝全景。","停車資訊待確認。","Grab。"],
-["購物","EQL Apparel","逛逛越南運動服飾品牌。","必買","拍攝喜歡的運動穿搭。","停車資訊待確認。","Grab。"],
-["景點","胡志明市書街","漫步書店街，感受越南城市的文藝氣息。","必拍","利用書店、綠樹與街道拍攝生活感照片。","停車資訊待確認。","建議步行。"],
-["食物","鴉片工廠 or Le Corto","二選一安排晚餐，保留原始餐廳選擇。","晚餐","拍攝餐廳氣氛與精緻餐點。","依餐廳確認。","Grab。"],
-["活動","Norah Spa","安排 SPA 放鬆，舒緩整天走路的疲勞。","體驗","拍攝療癒的空間與細節。","停車資訊待確認。","Grab。"],
-["購物","LÀMIN APPAREL","越南服飾購物行程。","必買","記錄當天最喜歡的穿搭。","停車資訊待確認。","Grab。"],
-["購物","LIBÉ Nguyễn Trãi","逛逛越南當地服飾品牌。","必買","拍攝店面與購物戰利品。","停車資訊待確認。","Grab。"],
-["食物","Mùa Craft Saké","安排晚間餐飲與休閒時光。","夜間行程","拍攝店內氛圍與飲品。","停車資訊待確認。","Grab；飲酒勿駕車。"],
-["酒店","Airbnb","返回民宿休息。","住宿","整理今日購物戰利品。","依民宿規定確認。","Grab。"]]],
-["04/04","SUN","胡志明市 → 芽莊",[
-["食物","The Running Bean - Coffee and Brunch","享用早午餐，為退房及移動做準備。","必吃","拍攝咖啡與早午餐的桌面俯拍照。","停車資訊待確認。","Grab。"],
-["購物","Forward Perfume","香氛購物，尋找喜歡的香氣。","必買","拍攝香水瓶與包裝細節。","停車資訊待確認。","Grab。"],
-["購物","Star Kitchen Souvenir Gift Shop","採購越南伴手禮。","必買","拍攝伴手禮包裝與購物戰利品。","停車資訊待確認。","Grab。"],
-["交通","Airbnb 退房","中午 12:00 退房，前往新山一國際機場。","CHECK-OUT","離開前確認護照、行李與隨身物品。","停車資訊待確認。","預留前往機場的交通時間。"],
-["交通","新山一國際機場","搭乘航班前往芽莊，實際航班時間待確認。","移動日","拍攝機場登機及旅行轉場照片。","依機場公告。","確認航班及芽莊接送。"],
-["酒店","BOMA Resort","抵達芽莊後入住海景度假飯店，開始度假模式。","入住","拍攝飯店泳池、海景及房間陽台。","飯店停車規則待確認。","可詢問飯店接送服務。"],
-["食物","Pizza 4P's","安排披薩晚餐。","必吃","拍攝起司牽絲與披薩特寫。","依分店確認。","Grab。"],
-["活動","GRAND SPA","安排 SPA 體驗，放鬆旅行疲勞。","體驗","拍攝 SPA 空間與療癒氛圍。","停車資訊待確認。","確認預約及接送方式。"]]],
-["04/05","MON","芽莊 · BOMA Resort",[
-["活動","飯店晨間瑜珈","早起參加飯店瑜珈課程，開啟悠閒的一天。","必體驗","拍攝海景瑜珈、晨光及伸展剪影。","飯店內活動。","步行前往活動場地。"],
-["食物","飯店早餐","享用早餐後回房補眠。","享受假期","拍攝早餐與度假早晨的氛圍。","飯店內。","步行。"],
-["活動","BOMA 泳池","下午在飯店泳池放鬆、玩水。","必拍","使用廣角拍攝泳池與海景，人物可拍背影。","飯店內。","步行。"],
-["活動","BOMA 健身房","自由安排健身與飯店設施體驗。","自由活動","拍攝度假運動日常。","飯店內。","步行。"],
-["食物","Skylight & Lá Kitchen","依原行程安排芽莊市區餐飲。","必吃","拍攝餐點與芽莊夜景。","依店家確認。","可搭飯店 City Center Shuttle 或 Grab。"],
-["購物","GO! Nha Trang","前往超市採買飲料、零食與日用品。","必逛","拍攝越南零食及特色商品。","依現場公告。","可搭飯店 City Center Shuttle。"]]],
-["04/06","TUE","芽莊 → 胡志明市",[
-["景點","Hot Mineral Springs I-Resort","體驗芽莊泥漿浴與溫泉設施，享受度假療癒時光。","必體驗","拍攝園區綠意、溫泉及泥漿浴體驗。","園區停車資訊待確認。","Grab。"],
-["食物","Ăn Thôi or Banh Mi Phan","午餐二選一，保留兩個原始選項。","必吃","拍攝越南料理及在地街頭美食。","依店家確認。","Grab。"],
-["活動","CHARM SPA Garden Nha Trang","體驗越式洗髮，安排離開芽莊前的放鬆行程。","必體驗","拍攝洗髮過程與特色 SPA 空間。","停車資訊待確認。","Grab。"],
-["交通","芽莊 → 胡志明市臥鋪巴士","搭乘臥鋪巴士返回胡志明市，車班與上車地點待確認。","交通","拍攝臥鋪巴士內部，準備眼罩及耳塞。","不適用。","提前確認乘車站、行李規定與抵達時間。"]]],
-["04/07","WED","胡志明市 → 台灣",[
-["交通","新山一國際機場","前往機場，搭乘返台班機，結束越南旅行。","返程","留下最後一張旅行紀念照。","依機場公告。","確認巴士抵達時間與返程航班，預留交通緩衝。"]]]
-];
-let selected=0;
-const originalDays=days;
-try { const saved=localStorage.getItem('vietnam-trip-itinerary-v2'); if(saved){ const parsed=JSON.parse(saved); if(Array.isArray(parsed)&&parsed.length) days=parsed; } } catch(e){}
-function persistDays(){localStorage.setItem('vietnam-trip-itinerary-v2',JSON.stringify(days));}
-function renderDays(){document.getElementById('days').innerHTML=days.map((d,i)=>`<button class="daybtn ${i===selected?'active':''}" onclick="selectDay(${i})">${d[0]}<small>${d[1]} · ${d[2]}</small></button>`).join('')}
-function selectDay(i){selected=i;renderDays();renderDay()}
-function cityForDay(i){return i===0||i===1||i===5?'Ho Chi Minh City, Vietnam':i===2?'Nha Trang, Vietnam':i===3?'Nha Trang, Vietnam':'Nha Trang, Vietnam';}
-const preciseMap={
-'新定教堂':'Tan Dinh Church, District 3, Ho Chi Minh City, Vietnam',
-'胡志明市書街':'Nguyen Van Binh Book Street, District 1, Ho Chi Minh City, Vietnam',
-'% Arabica · The Cafe Apartments':'The Cafe Apartments, 42 Nguyen Hue, District 1, Ho Chi Minh City, Vietnam',
-'Bánh Mì Huynh Hoa':'Banh Mi Huynh Hoa, 26 Le Thi Rieng, District 1, Ho Chi Minh City, Vietnam',
-'新山一國際機場':'Tan Son Nhat International Airport, Ho Chi Minh City, Vietnam',
-'BOMA Resort':'Boma Resort, Nha Trang, Vietnam',
-'GO! Nha Trang':'GO! Nha Trang, Nha Trang, Vietnam',
-'Hot Mineral Springs I-Resort':'I-Resort Nha Trang, Nha Trang, Vietnam',
-'CHARM SPA Garden Nha Trang':'Charm Spa Grand Nha Trang, Nha Trang, Vietnam'
-};
-function mapQuery(name,idx){return preciseMap[name] || `${name}, ${cityForDay(idx)}`;}
-function reminderFor(x,idx){
- const name=x[1];
- if(name.includes('機場')) return '小提醒：再次確認航班、航廈、行李及接送時間，預留交通緩衝。';
- if(name.includes('退房')) return '小提醒：中午 12:00 退房；離開前檢查護照、充電器及行李。';
- if(name.includes('臥鋪')) return '小提醒：先確認上車站、發車時間、行李規定及抵達地點，準備眼罩與耳塞。';
- if(name.includes('BOMA')) return '小提醒：飯店接駁與活動可能需預約，請先向櫃檯確認當日時間。';
- if(x[0]==='活動' && name.toLowerCase().includes('spa')) return '小提醒：建議先預約並確認服務內容、時間及是否含接送。';
- if(x[0]==='購物') return '小提醒：確認營業時間、付款方式及退稅／行李空間需求。';
- if(x[0]==='食物') return '小提醒：出發前確認營業時間與是否需要訂位；熱門時段預留排隊時間。';
- if(x[0]==='景點') return '小提醒：留意開放時間、服裝規定與現場人潮，並保管好隨身物品。';
- if(idx===3) return '小提醒：今天以飯店放鬆為主，可先確認瑜珈課及接駁車是否需登記。';
- return '小提醒：出發前再確認營業時間、地址及交通方式。';
-}
-function editItem(i){const x=days[selected][3][i];const category=prompt('分類（食物／活動／購物／景點／酒店／交通）',x[0]);if(category===null)return;const name=prompt('名稱',x[1]);if(name===null)return;const desc=prompt('行程描述',x[2]);if(desc===null)return;const tag=prompt('標籤（必吃／必買／必拍／其他）',x[3]);if(tag===null)return;const parking=prompt('停車資訊',x[5]);if(parking===null)return;const transport=prompt('交通／加油資訊',x[6]);if(transport===null)return;days[selected][3][i]=[category,name,desc,tag,'',parking,transport];persistDays();renderDays();renderDay();}
-function deleteItem(i){if(!confirm(`確定刪除「${days[selected][3][i][1]}」？`))return;days[selected][3].splice(i,1);persistDays();renderDays();renderDay();}
-function addItem(){const category=prompt('分類（食物／活動／購物／景點／酒店／交通）','景點');if(category===null)return;const name=prompt('行程名稱');if(!name)return;const desc=prompt('行程描述','');if(desc===null)return;const tag=prompt('標籤（必吃／必買／必拍／其他）','必拍');if(tag===null)return;const parking=prompt('停車資訊（可填待確認）','停車資訊待確認。');if(parking===null)return;const transport=prompt('交通／加油資訊','建議使用 Grab。');if(transport===null)return;days[selected][3].push([category,name,desc,tag,'',parking,transport]);persistDays();renderDays();renderDay();}
-function renderDay(){let d=days[selected];let clothes=selected<2?'胡志明市：輕薄透氣上衣、短褲或長裙、舒適涼鞋。室內冷氣較強，可帶薄外套。':selected===2?'移動日：穿著舒適透氣，隨身準備護照、機票及薄外套。':'芽莊：泳裝、罩衫、透氣洋裝、涼鞋、遮陽帽及太陽眼鏡。SPA 可帶換洗衣物。';document.getElementById('daycontent').innerHTML=`<div class="dayhead"><h2>${d[0]} · ${d[2]}</h2><div class="sub">${d[1]}　·　DAY ${selected+1}　·　${d[3].length} 個行程</div><button class="action" onclick="addItem()">＋ 新增行程</button></div>`+d[3].map((x,i)=>{let query=mapQuery(x[1],selected);return `<article class="card"><span class="tag category">${x[0]}</span><span class="tag">${x[3]}</span><h3>${x[1]}</h3><p>${x[2]}</p><div class="reminder">💡 <b>小提醒</b><br>${reminderFor(x,selected)}</div><div class="meta">🚗 停車：${x[5]}<br>🚕 交通／加油：${x[6]}（原始 PDF 未提供自駕及加油站位置）</div><a class="action" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}" target="_blank" rel="noopener">📍 Google Maps 導航</a><div class="manage"><button onclick="editItem(${i})">✎ 修改</button><button class="danger" onclick="deleteItem(${i})">刪除</button></div></article>`}).join('')+`<div class="guidebox"><h3>👗 今日穿搭建議</h3><p>${clothes}</p><h3>☀️ 天氣提示</h3><p>4 月通常炎熱，注意防曬及補充水分。午後可能有短暫降雨，出門可帶折疊傘。這是季節性參考，不是即時預報。</p></div>`}
-document.getElementById('packing').innerHTML=['護照、機票、住宿資料','越南盾、信用卡','防曬乳、太陽眼鏡','泳衣、泳帽、罩衫','薄外套、換洗衣物','防蚊液、常備藥品','充電器、行動電源','臥鋪巴士用眼罩、耳塞'].map((x,i)=>`<label style="display:block;margin:9px 0;font-size:14px"><input type="checkbox"> ${x}</label>`).join('');
-renderDays();renderDay();
-</script></body></html>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>越南慢慢遊｜2027 胡志明・芽莊</title>
+  <!-- 載入 Google Fonts: Zen Maru Gothic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <!-- 載入 Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- 載入 Font Awesome 圖示庫 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Zen Maru Gothic"', 'sans-serif'],
+          },
+          colors: {
+            milkTea: {
+              light: '#F3EAE0',
+              DEFAULT: '#E6D5C3',
+              dark: '#D4B59E',
+              deep: '#B8957B',
+            },
+            snow: '#FAF8F5',
+            sakura: {
+              light: '#FFF0F4',
+              DEFAULT: '#FADCE4',
+              dark: '#F4B8C8',
+              deep: '#E88DA6',
+            },
+            cocoa: {
+              DEFAULT: '#4A3B32',
+              light: '#7A685D',
+              muted: '#A39287',
+            }
+          },
+          boxShadow: {
+            'kawaii': '0 6px 20px -4px rgba(180, 145, 120, 0.16)',
+            'kawaii-sm': '0 3px 10px -2px rgba(180, 145, 120, 0.12)',
+            'float-nav': '0 10px 30px -5px rgba(74, 59, 50, 0.18)',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* 全域日式可愛風格與背景紋理 */
+    body {
+      font-family: 'Zen Maru Gothic', sans-serif;
+      color: #4A3B32;
+      background-color: #EFE6DC;
+      /* 柔和日式波點背景 */
+      background-image: radial-gradient(#D4B59E 1.2px, transparent 1.2px), radial-gradient(#F4B8C8 1.2px, #EFE6DC 1.2px);
+      background-size: 36px 36px;
+      background-position: 0 0, 18px 18px;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* App 主容器內層背景 */
+    .app-canvas {
+      background-color: #FAF8F5;
+      background-image: radial-gradient(rgba(212, 181, 158, 0.22) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    /* 隱藏橫向捲軸但保持滑動流暢 */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* 頁面切換淡入上浮動畫 */
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fade-up {
+      animation: fadeSlideUp 0.28s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    /* 日式紙膠帶裝飾效果 */
+    .washi-tape {
+      background: repeating-linear-gradient(
+        45deg,
+        rgba(250, 220, 228, 0.85),
+        rgba(250, 220, 228, 0.85) 8px,
+        rgba(244, 184, 200, 0.65) 8px,
+        rgba(244, 184, 200, 0.65) 16px
+      );
+    }
+
+    /* 點擊彈性回饋 */
+    .btn-bounce {
+      transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.15s ease;
+    }
+    .btn-bounce:active {
+      transform: scale(0.95);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex justify-center items-start sm:py-6">
+
+  <!-- 手機優先 App 外框（桌機顯示精緻手機框，手機滿版） -->
+  <div id="app-shell" class="app-canvas w-full max-w-[440px] min-h-screen sm:min-h-[840px] sm:max-h-[900px] sm:rounded-[40px] sm:border-[6px] sm:border-white sm:shadow-2xl relative flex flex-col overflow-hidden">
+    
+    <!-- 頂部可愛點綴條 -->
+    <div class="h-1.5 w-full bg-gradient-to-r from-milkTea-dark via-sakura-dark to-milkTea-dark shrink-0"></div>
+
+    <!-- Header 區塊 -->
+    <header class="px-5 pt-4 pb-3 bg-white/85 backdrop-blur-md border-b border-milkTea/50 sticky top-0 z-30 shrink-0">
+      <div class="flex items-center justify-between">
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-sakura text-cocoa text-sm shadow-sm">
+              🌸
+            </span>
+            <h1 class="text-xl font-black tracking-wide text-cocoa">越南慢慢遊</h1>
+            <span class="text-xs font-bold px-2 py-0.5 rounded-full bg-milkTea-light text-cocoa-light border border-milkTea">VN 2027</span>
+          </div>
+          <p class="text-xs text-cocoa-light mt-1 font-medium flex items-center gap-1.5">
+            <i class="fa-regular fa-calendar text-sakura-deep"></i>
+            <span>2027/04/02 - 04/07・胡志明 & 芽莊 6日</span>
+          </p>
+        </div>
+        <!-- 旅程狀態徽章 -->
+        <div class="text-right">
+          <div id="trip-badge" class="inline-flex flex-col items-end bg-sakura-light border border-sakura-dark/60 px-3 py-1.5 rounded-2xl shadow-kawaii-sm">
+            <span class="text-[10px] font-bold text-sakura-deep leading-none">SLOW TRIP</span>
+            <span class="text-xs font-black text-cocoa mt-0.5">6天5夜 ✨</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 主內容捲動區域 -->
+    <main id="main-scroll" class="flex-1 overflow-y-auto no-scrollbar pb-28">
+      
+      <!-- ==================== TAB 1: 行程頁 (ITINERARY) ==================== -->
+      <section id="tab-itinerary" class="animate-fade-up">
+        
+        <!-- 每日選擇切換列 (橫向滑動膠囊) -->
+        <div class="sticky top-0 z-20 bg-snow/95 backdrop-blur-sm pt-3 pb-2.5 px-4 border-b border-milkTea/40">
+          <div id="day-selector" class="flex gap-2 overflow-x-auto no-scrollbar py-0.5">
+            <!-- 由 JS 動態渲染 Day 1 ~ Day 6 按鈕 -->
+          </div>
+        </div>
+
+        <!-- 當日行程內容容器 -->
+        <div class="px-4 pt-3 space-y-4">
+          
+          <!-- 每日卡片標頭 (日期 + 星期 + 城市 + 新增按鈕) -->
+          <div class="bg-white rounded-3xl p-4 shadow-kawaii border border-milkTea/60 relative overflow-hidden">
+            <!-- 裝飾紙膠帶 -->
+            <div class="washi-tape w-16 h-3.5 rounded-sm absolute -top-1 right-6 rotate-3 opacity-80"></div>
+            
+            <div class="flex items-center justify-between">
+              <div>
+                <div class="flex items-center gap-2">
+                  <span id="day-header-badge" class="px-2.5 py-0.5 rounded-full text-xs font-black bg-cocoa text-white">DAY 1</span>
+                  <span id="day-header-date" class="text-base font-black text-cocoa">04/02 (五)</span>
+                </div>
+                <div class="flex items-center gap-1.5 mt-1.5">
+                  <span class="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-1 rounded-xl bg-sakura-light text-cocoa border border-sakura">
+                    <i class="fa-solid fa-location-dot text-sakura-deep"></i>
+                    <span id="day-header-city">胡志明市 Ho Chi Minh</span>
+                  </span>
+                  <span id="day-item-count" class="text-xs text-cocoa-muted font-medium">共 4 個行程</span>
+                </div>
+              </div>
+
+              <!-- 新增行程按鈕 -->
+              <button onclick="openItemModal()" class="btn-bounce flex items-center gap-1.5 bg-gradient-to-r from-sakura-dark to-sakura-deep text-white text-xs font-bold px-3.5 py-2.5 rounded-2xl shadow-kawaii-sm hover:opacity-95">
+                <i class="fa-solid fa-plus"></i>
+                <span>新增行程</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 景點卡片列表 -->
+          <div id="itinerary-list" class="space-y-3">
+            <!-- 由 JS 動態渲染每一張景點卡片 -->
+          </div>
+
+          <!-- 每一天行程下方：建議穿著 ＋ 天氣提示卡片 -->
+          <div id="daily-outfit-card" class="bg-gradient-to-br from-milkTea-light via-white to-sakura-light rounded-3xl p-4 shadow-kawaii border-2 border-white relative">
+            <div class="flex items-start gap-3">
+              <div class="w-11 h-11 rounded-2xl bg-white shadow-kawaii-sm flex items-center justify-center text-2xl shrink-0 border border-milkTea/50">
+                👗
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center justify-between">
+                  <h3 class="text-sm font-black text-cocoa flex items-center gap-1.5">
+                    <span>今日建議穿著 ＋ 天氣提示</span>
+                  </h3>
+                  <span id="outfit-weather-pill" class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-white text-cocoa-light border border-milkTea/60">
+                    ☀️ 28°~35°C
+                  </span>
+                </div>
+                <p id="outfit-advice-text" class="text-xs text-cocoa-light leading-relaxed mt-1.5 font-medium">
+                  <!-- 由 JS 動態填入 -->
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 重設預設行程小按鈕 -->
+          <div class="pt-2 pb-4 text-center">
+            <button onclick="confirmResetData()" class="text-[11px] text-cocoa-muted hover:text-cocoa underline decoration-dotted transition">
+              <i class="fa-solid fa-rotate-left mr-1"></i>恢復為原始預設行程資料
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== TAB 2: 指南頁 (GUIDE) ==================== -->
+      <section id="tab-guide" class="hidden animate-fade-up px-4 pt-4 space-y-4">
+        
+        <!-- 指南頂部標題 -->
+        <div class="bg-white rounded-3xl p-4 shadow-kawaii border border-milkTea/60 flex items-center justify-between">
+          <div>
+            <h2 class="text-lg font-black text-cocoa">實用旅遊小手冊 📖</h2>
+            <p class="text-xs text-cocoa-light mt-0.5">航班、飯店接駁車、手作體驗與貼士</p>
+          </div>
+          <span class="text-3xl">🧳</span>
+        </div>
+
+        <!-- 1. 航班資訊總覽卡 -->
+        <div class="bg-white rounded-3xl p-4 shadow-kawaii border border-milkTea/60 space-y-3">
+          <div class="flex items-center gap-2 border-b border-milkTea-light pb-2.5">
+            <span class="w-7 h-7 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center text-xs">
+              <i class="fa-solid fa-plane-departure"></i>
+            </span>
+            <h3 class="text-sm font-black text-cocoa">航班資訊總覽 Flights</h3>
+          </div>
+
+          <!-- 去程 -->
+          <div class="bg-snow rounded-2xl p-3 border border-milkTea/50">
+            <div class="flex justify-between items-center text-[11px] font-bold text-sakura-deep mb-1">
+              <span>去程｜2027/04/02 (五)</span>
+              <span class="px-2 py-0.5 rounded-full bg-sakura-light text-cocoa">中華航空 CI783</span>
+            </div>
+            <div class="flex items-center justify-between mt-1">
+              <div>
+                <div class="text-base font-black text-cocoa">13:45</div>
+                <div class="text-xs font-bold text-cocoa-light">桃園 TPE (T1)</div>
+              </div>
+              <div class="flex-1 px-3 flex flex-col items-center">
+                <span class="text-[10px] text-cocoa-muted">直飛 3h 35m</span>
+                <div class="w-full flex items-center gap-1 my-0.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-milkTea-dark"></span>
+                  <div class="flex-1 border-t-2 border-dashed border-milkTea-dark"></div>
+                  <i class="fa-solid fa-plane text-[10px] text-sakura-deep"></i>
+                </div>
+              </div>
+              <div class="text-right">
+                <div class="text-base font-black text-cocoa">16:20</div>
+                <div class="text-xs font-bold text-cocoa-light">胡志明 SGN (T2)</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 國內線 -->
+          <div class="bg-snow rounded-2xl p-3 border border-milkTea/50">
+            <div class="flex justify-between items-center text-[11px] font-bold text-amber-600 mb-1">
+              <span>國內線｜2027/04/04 (日)</span>
+              <span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-800">越捷 VJ600 Deluxe</span>
+            </div>
+            <div class="flex items-center justify-between mt-1">
+              <div>
+                <div class="text-base font-black text-cocoa">14:30</div>
+                <div class="text-xs font-bold text-cocoa-light">胡志明 SGN</div>
+              </div>
+              <div class="flex-1 px-3 flex flex-col items-center">
+                <span class="text-[10px] text-cocoa-muted">國內線 1h 05m</span>
+                <div class="w-full flex items-center gap-1 my-0.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-milkTea-dark"></span>
+                  <div class="flex-1 border-t-2 border-dashed border-milkTea-dark"></div>
+                  <i class="fa-solid fa-plane text-[10px] text-amber-500"></i>
+                </div>
+              </div>
+              <div class="text-right">
+                <div class="text-base font-black text-cocoa">15:35</div>
+                <div class="text-xs font-bold text-cocoa-light">芽莊 CXR</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 回程 -->
+          <div class="bg-snow rounded-2xl p-3 border border-milkTea/50">
+            <div class="flex justify-between items-center text-[11px] font-bold text-emerald-700 mb-1">
+              <span>回程｜2027/04/07 (三)</span>
+              <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">中華航空 CI782</span>
+            </div>
+            <div class="flex items-center justify-between mt-1">
+              <div>
+                <div class="text-base font-black text-cocoa">10:50</div>
+                <div class="text-xs font-bold text-cocoa-light">胡志明 SGN (T2)</div>
+              </div>
+              <div class="flex-1 px-3 flex flex-col items-center">
+                <span class="text-[10px] text-cocoa-muted">直飛 3h 30m</span>
+                <div class="w-full flex items-center gap-1 my-0.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-milkTea-dark"></span>
+                  <div class="flex-1 border-t-2 border-dashed border-milkTea-dark"></div>
+                  <i class="fa-solid fa-plane text-[10px] text-emerald-600"></i>
+                </div>
+              </div>
+              <div class="text-right">
+                <div class="text-base font-black text-cocoa">15:20</div>
+                <div class="text-xs font-bold text-cocoa-light">桃園 TPE (T1)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Boma Resort 免費接駁車時刻表卡 -->
+        <div class="bg-white rounded-3xl p-4 shadow-kawaii border border-milkTea/60 space-y-3">
+          <div class="flex items-center justify-between border-b border-milkTea-light pb-2.5">
+            <div class="flex items-center gap-2">
+              <span class="w-7 h-7 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center text-xs">
+                <i class="fa-solid fa-van-shuttle"></i>
+              </span>
+              <h3 class="text-sm font-black text-cocoa">Boma Resort 接駁車時刻</h3>
+            </div>
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-rose-100 text-rose-700">需提前1hr預約</span>
+          </div>
+
+          <!-- Route 1 -->
+          <div class="bg-teal-50/60 rounded-2xl p-3 border border-teal-200/70">
+            <div class="text-xs font-black text-teal-900 mb-2 flex items-center justify-between">
+              <span>🏖️ Route 1：海灘線 (Ana Beach)</span>
+              <span class="text-[10px] font-bold text-teal-700">Boma ⇄ Ana Beach</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2 text-xs">
+              <div class="bg-white rounded-xl p-2 text-center border border-teal-100">
+                <div class="text-[10px] text-cocoa-muted font-bold">去程 GO (飯店出發)</div>
+                <div class="font-black text-cocoa mt-0.5">09:30 / 14:00</div>
+              </div>
+              <div class="bg-white rounded-xl p-2 text-center border border-teal-100">
+                <div class="text-[10px] text-cocoa-muted font-bold">回程 RETURN</div>
+                <div class="font-black text-cocoa mt-0.5">11:30 / 17:00</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Route 2 -->
+          <div class="bg-amber-50/60 rounded-2xl p-3 border border-amber-200/70">
+            <div class="text-xs font-black text-amber-900 mb-2 flex items-center justify-between">
+              <span>🛍️ Route 2：市區購物線</span>
+              <span class="text-[10px] font-bold text-amber-700">Gold Coast / AB Central</span>
+            </div>
+            <div class="space-y-1.5 text-xs">
+              <div class="bg-white rounded-xl p-2 flex justify-between items-center border border-amber-100">
+                <span class="font-bold text-cocoa-light">去程 GO (Boma 出發)</span>
+                <span class="font-black text-cocoa">10:30 / 14:00</span>
+              </div>
+              <div class="bg-white rounded-xl p-2 flex justify-between items-center border border-amber-100">
+                <span class="font-bold text-cocoa-light">回程 AB Central Mall</span>
+                <span class="font-black text-cocoa">14:30 / 16:30</span>
+              </div>
+              <div class="bg-white rounded-xl p-2 flex justify-between items-center border border-amber-100">
+                <span class="font-bold text-cocoa-light">回程 Gold Coast Mall</span>
+                <span class="font-black text-cocoa">14:35 / 16:35</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-[11px] text-cocoa-light bg-milkTea-light/60 p-2.5 rounded-xl leading-relaxed">
+            💡 <b>預約方式：</b>請於發車前 1 小時透過櫃檯、Boma App 或房內電話直撥「0」預約，並提前 5 分鐘至大廳候車。
+          </p>
+        </div>
+
+        <!-- 3. Boma 飯店活動與手作價目 -->
+        <div class="bg-white rounded-3xl p-4 shadow-kawaii border border-milkTea/60 space-y-2.5">
+          <div class="flex items-center gap-2 border-b border-milkTea-light pb-2">
+            <span class="w-7 h-7 rounded-xl bg-sakura text-sakura-deep flex items-center justify-center text-xs">
+              <i class="fa-solid fa-palette"></i>
+            </span>
+            <h3 class="text-sm font-black text-cocoa">Boma Resort 週一活動與手作</h3>
+          </div>
+          <div class="space-y-2 text-xs">
+            <div class="flex justify-between items-center bg-snow p-2.5 rounded-2xl border border-milkTea/40">
+              <span class="font-bold text-cocoa">🧘‍♀️ 晨間瑜珈 Yoga (07:00-07:30)</span>
+              <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">免費・限10人需預約</span>
+            </div>
+            <div class="flex justify-between items-center bg-snow p-2.5 rounded-2xl border border-milkTea/40">
+              <span class="font-bold text-cocoa">🎨 帆布袋 / 斗笠彩繪 / 手鍊 / 東湖畫</span>
+              <span class="font-black text-sakura-deep">180,000 VND</span>
+            </div>
+            <div class="flex justify-between items-center bg-snow p-2.5 rounded-2xl border border-milkTea/40">
+              <span class="font-bold text-cocoa">🕯️ 香氛蠟燭手作體驗</span>
+              <span class="font-black text-sakura-deep">90,000 - 150,000 VND</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. 越南自由行實用貼士 -->
+        <div class="bg-white rounded-3xl p-4 shadow-kawaii border border-milkTea/60 space-y-2.5">
+          <div class="flex items-center gap-2 border-b border-milkTea-light pb-2">
+            <span class="w-7 h-7 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-xs">
+              <i class="fa-solid fa-lightbulb"></i>
+            </span>
+            <h3 class="text-sm font-black text-cocoa">越南慢慢遊實用貼士</h3>
+          </div>
+          <ul class="space-y-2 text-xs text-cocoa-light leading-relaxed">
+            <li class="flex gap-2 items-start">
+              <span class="text-base">🚕</span>
+              <div><b class="text-cocoa">Grab 叫車必備：</b>建議在台灣先下載並綁定信用卡，越南市區叫車價格透明且冷氣涼爽。</div>
+            </li>
+            <li class="flex gap-2 items-start">
+              <span class="text-base">💵</span>
+              <div><b class="text-cocoa">換匯小技巧：</b>胡志明市區「濱城市場旁銀樓（如 Hà Tâm）」匯率通常優於機場，可先在機場換少量搭車用。</div>
+            </li>
+            <li class="flex gap-2 items-start">
+              <span class="text-base">💆‍♀️</span>
+              <div><b class="text-cocoa">Spa 與美甲小費：</b>越式按摩與洗髮服務結束後，通常可給予技師約 50,000 ~ 100,000 VND 小費表達感謝。</div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ==================== TAB 3: 天氣頁 (WEATHER) ==================== -->
+      <section id="tab-weather" class="hidden animate-fade-up px-4 pt-4 space-y-4">
+        
+        <!-- 天氣總覽標頭 -->
+        <div class="bg-white rounded-3xl p-4 shadow-kawaii border border-milkTea/60 flex items-center justify-between">
+          <div>
+            <h2 class="text-lg font-black text-cocoa">4月氣候與打包清單 ☀️</h2>
+            <p class="text-xs text-cocoa-light mt-0.5">乾季陽光燦爛，防曬與保濕都要顧好！</p>
+          </div>
+          <span class="text-3xl">🌤️</span>
+        </div>
+
+        <!-- 雙城氣候對比卡片 -->
+        <div class="grid grid-cols-1 gap-3">
+          <!-- 胡志明市 -->
+          <div class="bg-gradient-to-br from-amber-50 via-white to-orange-50/70 rounded-3xl p-4 shadow-kawaii border border-amber-200/70">
+            <div class="flex items-center justify-between">
+              <div>
+                <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800">Day 1 - Day 3</span>
+                <h3 class="text-base font-black text-cocoa mt-1">胡志明市 Ho Chi Minh</h3>
+              </div>
+              <div class="text-right">
+                <div class="text-2xl font-black text-amber-600">28°~35°C</div>
+                <div class="text-[11px] font-bold text-cocoa-light">☀️ 晴朗炎熱・乾季末期</div>
+              </div>
+            </div>
+            <p class="text-xs text-cocoa-light mt-2.5 leading-relaxed bg-white/80 p-2.5 rounded-2xl">
+              4 月是胡志明市一年中最熱情陽光的時候！白天體感溫度較高、紫外線強，但咖啡廳與百貨冷氣非常足，建議採「透氣夏裝＋隨身薄防曬襯衫」穿搭。
+            </p>
+          </div>
+
+          <!-- 芽莊 -->
+          <div class="bg-gradient-to-br from-sky-50 via-white to-teal-50/70 rounded-3xl p-4 shadow-kawaii border border-sky-200/70">
+            <div class="flex items-center justify-between">
+              <div>
+                <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-sky-100 text-sky-800">Day 3 - Day 5</span>
+                <h3 class="text-base font-black text-cocoa mt-1">芽莊 Nha Trang</h3>
+              </div>
+              <div class="text-right">
+                <div class="text-2xl font-black text-sky-600">26°~32°C</div>
+                <div class="text-[11px] font-bold text-cocoa-light">🌊 藍天白雲・海風徐徐</div>
+              </div>
+            </div>
+            <p class="text-xs text-cocoa-light mt-2.5 leading-relaxed bg-white/80 p-2.5 rounded-2xl">
+              4 月正值芽莊最佳旅遊季節！海水清澈湛藍、降雨極少，白天適合泳池戲水與泥漿浴，傍晚海風吹拂非常涼爽愜意。
+            </p>
+          </div>
+        </div>
+
+        <!-- 互動式打包清單 (Packing Checklist) -->
+        <div class="bg-white rounded-3xl p-4 shadow-kawaii border border-milkTea/60 space-y-3">
+          <div class="flex items-center justify-between border-b border-milkTea-light pb-2.5">
+            <div class="flex items-center gap-2">
+              <span class="w-7 h-7 rounded-xl bg-sakura text-sakura-deep flex items-center justify-center text-xs">
+                <i class="fa-solid fa-suitcase-rolling"></i>
+              </span>
+              <h3 class="text-sm font-black text-cocoa">行前打包檢查表</h3>
+            </div>
+            <span id="checklist-progress" class="text-xs font-black text-sakura-deep bg-sakura-light px-2.5 py-0.5 rounded-full">0 / 8</span>
+          </div>
+
+          <div id="packing-list" class="space-y-2">
+            <!-- 由 JS 動態渲染並儲存勾選狀態 -->
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ==================== 底部浮動毛玻璃導覽列 ==================== -->
+    <nav class="fixed sm:absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] max-w-[390px] z-40">
+      <div class="bg-white/90 backdrop-blur-lg border border-milkTea/80 rounded-full p-1.5 shadow-float-nav flex items-center justify-between">
+        <button onclick="switchTab('itinerary')" id="nav-itinerary" class="nav-btn flex-1 py-2.5 rounded-full flex items-center justify-center gap-2 text-xs font-black transition-all bg-cocoa text-white shadow-sm">
+          <i class="fa-solid fa-map-location-dot"></i>
+          <span>行程</span>
+        </button>
+        <button onclick="switchTab('guide')" id="nav-guide" class="nav-btn flex-1 py-2.5 rounded-full flex items-center justify-center gap-2 text-xs font-bold text-cocoa-light hover:text-cocoa transition-all">
+          <i class="fa-solid fa-book-open"></i>
+          <span>指南</span>
+        </button>
+        <button onclick="switchTab('weather')" id="nav-weather" class="nav-btn flex-1 py-2.5 rounded-full flex items-center justify-center gap-2 text-xs font-bold text-cocoa-light hover:text-cocoa transition-all">
+          <i class="fa-solid fa-sun"></i>
+          <span>天氣</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ==================== 新增 / 編輯行程 MODAL ==================== -->
+    <div id="item-modal" class="fixed inset-0 bg-cocoa/40 backdrop-blur-xs z-50 hidden items-end sm:items-center justify-center p-0 sm:p-4">
+      <div class="bg-snow w-full max-w-[430px] rounded-t-3xl sm:rounded-3xl p-5 shadow-2xl border-2 border-white animate-fade-up max-h-[90vh] overflow-y-auto">
+        <div class="flex items-center justify-between pb-3 border-b border-milkTea/60">
+          <h3 id="modal-title" class="text-base font-black text-cocoa flex items-center gap-2">
+            <span>✨ 新增行程卡片</span>
+          </h3>
+          <button onclick="closeItemModal()" class="w-8 h-8 rounded-full bg-milkTea-light text-cocoa flex items-center justify-center hover:bg-milkTea">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <form id="item-form" onsubmit="saveItemForm(event)" class="space-y-3.5 mt-4">
+          <input type="hidden" id="edit-item-id" />
+
+          <!-- 分類選擇 -->
+          <div>
+            <label class="block text-xs font-bold text-cocoa mb-1.5">景點分類</label>
+            <div class="grid grid-cols-3 gap-2" id="category-options">
+              <!-- JS 渲染分類按鈕 -->
+            </div>
+            <input type="hidden" id="item-category" value="食物" required />
+          </div>
+
+          <!-- 時間 / 備註時間 -->
+          <div class="grid grid-cols-3 gap-2">
+            <div>
+              <label class="block text-xs font-bold text-cocoa mb-1">時間 (選填)</label>
+              <input type="text" id="item-time" placeholder="如 10:30" class="w-full px-3 py-2 rounded-2xl bg-white border border-milkTea text-xs font-medium text-cocoa focus:outline-none focus:border-sakura-deep" />
+            </div>
+            <div class="col-span-2">
+              <label class="block text-xs font-bold text-cocoa mb-1">景點 / 店家名稱 *</label>
+              <input type="text" id="item-title" required placeholder="例如：Bánh Mì Huynh Hoa" class="w-full px-3 py-2 rounded-2xl bg-white border border-milkTea text-xs font-bold text-cocoa focus:outline-none focus:border-sakura-deep" />
+            </div>
+          </div>
+
+          <!-- 描述 -->
+          <div>
+            <label class="block text-xs font-bold text-cocoa mb-1">行程描述與筆記</label>
+            <textarea id="item-desc" rows="2" placeholder="輸入必點美食、預約提醒或拍照亮點..." class="w-full px-3 py-2 rounded-2xl bg-white border border-milkTea text-xs font-medium text-cocoa focus:outline-none focus:border-sakura-deep"></textarea>
+          </div>
+
+          <!-- 彩色標籤複選 -->
+          <div>
+            <label class="block text-xs font-bold text-cocoa mb-1.5">特色彩色標籤 (可多選)</label>
+            <div class="flex flex-wrap gap-2" id="tag-options">
+              <!-- JS 渲染標籤切換 -->
+            </div>
+          </div>
+
+          <!-- Google Maps 搜尋關鍵字 -->
+          <div>
+            <label class="block text-xs font-bold text-cocoa mb-1">Google Maps 導航地點名稱</label>
+            <input type="text" id="item-map-query" placeholder="留空則自動使用上方景點名稱搜尋" class="w-full px-3 py-2 rounded-2xl bg-white border border-milkTea text-xs font-medium text-cocoa focus:outline-none focus:border-sakura-deep" />
+          </div>
+
+          <div class="pt-2 flex gap-2">
+            <button type="button" onclick="closeItemModal()" class="flex-1 py-2.5 rounded-2xl bg-milkTea-light text-cocoa text-xs font-bold">取消</button>
+            <button type="submit" class="flex-2 w-2/3 py-2.5 rounded-2xl bg-gradient-to-r from-sakura-dark to-sakura-deep text-white text-xs font-black shadow-kawaii-sm">儲存行程卡片</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ==================== 自訂可愛確認視窗 (取代 confirm / alert) ==================== -->
+    <div id="confirm-modal" class="fixed inset-0 bg-cocoa/40 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
+      <div class="bg-white w-full max-w-[320px] rounded-3xl p-5 shadow-2xl border-2 border-sakura text-center animate-fade-up">
+        <div class="w-12 h-12 rounded-full bg-sakura-light text-sakura-deep flex items-center justify-center text-xl mx-auto mb-3">
+          <i class="fa-solid fa-circle-question"></i>
+        </div>
+        <h4 id="confirm-title" class="text-base font-black text-cocoa">確定要刪除嗎？</h4>
+        <p id="confirm-message" class="text-xs text-cocoa-light mt-1.5 leading-relaxed">刪除後將無法復原這張行程卡片喔。</p>
+        <div class="flex gap-2 mt-4">
+          <button onclick="closeConfirmModal()" class="flex-1 py-2.5 rounded-2xl bg-milkTea-light text-cocoa text-xs font-bold">再想想</button>
+          <button id="confirm-yes-btn" class="flex-1 py-2.5 rounded-2xl bg-rose-400 text-white text-xs font-black shadow-sm">確定執行</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast 輕提示 -->
+    <div id="toast" class="fixed top-20 left-1/2 -translate-x-1/2 bg-cocoa text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg z-50 opacity-0 pointer-events-none transition-opacity duration-200">
+      已儲存變更 ✨
+    </div>
+
+  </div>
+
+  <script>
+    // ==================== 1. 分類與標籤設計系統 ====================
+    const CATEGORY_META = {
+      '食物': { icon: 'fa-utensils', emoji: '🍜', bg: 'bg-orange-100', text: 'text-orange-700', border: 'border-orange-200' },
+      '活動': { icon: 'fa-spa', emoji: '💆‍♀️', bg: 'bg-purple-100', text: 'text-purple-700', border: 'border-purple-200' },
+      '購物': { icon: 'fa-bag-shopping', emoji: '🛍️', bg: 'bg-emerald-100', text: 'text-emerald-700', border: 'border-emerald-200' },
+      '景點': { icon: 'fa-camera-retro', emoji: '📸', bg: 'bg-pink-100', text: 'text-pink-700', border: 'border-pink-200' },
+      '酒店': { icon: 'fa-bed', emoji: '🏨', bg: 'bg-amber-100', text: 'text-amber-800', border: 'border-amber-200' },
+      '交通': { icon: 'fa-plane', emoji: '✈️', bg: 'bg-sky-100', text: 'text-sky-700', border: 'border-sky-200' }
+    };
+
+    const TAG_META = {
+      '必吃': { bg: 'bg-orange-100', text: 'text-orange-700', dot: 'bg-orange-400' },
+      '必買': { bg: 'bg-emerald-100', text: 'text-emerald-700', dot: 'bg-emerald-400' },
+      '必拍': { bg: 'bg-pink-100', text: 'text-pink-700', dot: 'bg-pink-400' },
+      '放鬆': { bg: 'bg-purple-100', text: 'text-purple-700', dot: 'bg-purple-400' },
+      '重要': { bg: 'bg-rose-100', text: 'text-rose-700', dot: 'bg-rose-500' }
+    };
+
+    // ==================== 2. 預載入 2027 胡志明+芽莊 完整 6 天行程資料 ====================
+    const DEFAULT_ITINERARY = [
+      {
+        dayNum: 1,
+        shortDate: '04/02',
+        weekday: '五',
+        fullDate: '04/02 (五)',
+        city: '胡志明市 Ho Chi Minh',
+        weatherPill: '☀️ 28°~35°C',
+        outfitAdvice: '胡志明市 4 月氣溫約 28°C-35°C 炎熱晴朗，飛機上冷氣強建議採洋蔥式穿搭（薄長袖罩衫＋短袖），抵達後換上透氣輕便夏裝。',
+        items: [
+          {
+            id: 'd1-1',
+            category: '交通',
+            time: '13:45 - 16:20',
+            title: '中華航空 CI783 飛往胡志明',
+            desc: '桃園機場 T1 (13:45) 出發 → 抵達胡志明新山一機場 T2 (16:20)，02 Apr 2027。',
+            tags: ['重要'],
+            mapQuery: 'Tan Son Nhat International Airport Ho Chi Minh City'
+          },
+          {
+            id: 'd1-2',
+            category: '酒店',
+            time: '17:30',
+            title: '胡志明 Airbnb Check-in',
+            desc: '辦理入住、放好行李並稍作休息，準備開啟第一晚的越南美食探索。',
+            tags: [],
+            mapQuery: 'District 1 Ho Chi Minh City'
+          },
+          {
+            id: 'd1-3',
+            category: '食物',
+            time: '19:00',
+            title: 'Phở Việt Nam 道地越式河粉',
+            desc: '現煮鮮甜牛骨湯頭搭配手工河粉與新鮮香草，抵達越南的第一碗溫暖美味！',
+            tags: ['必吃'],
+            mapQuery: 'Pho Viet Nam Ho Chi Minh'
+          },
+          {
+            id: 'd1-4',
+            category: '活動',
+            time: '20:30',
+            title: 'Lisa Nail & Spa 做美甲',
+            desc: '開啟度假模式，享受精緻細膩的越式美甲與手足護理體驗。',
+            tags: ['放鬆'],
+            mapQuery: 'Lisa Nail & Spa Ho Chi Minh'
+          }
+        ]
+      },
+      {
+        dayNum: 2,
+        shortDate: '04/03',
+        weekday: '六',
+        fullDate: '04/03 (六)',
+        city: '胡志明市區漫遊',
+        weatherPill: '☀️ 29°~35°C',
+        outfitAdvice: '市區步行與拍照行程多，建議穿著亮色系或白色洋裝（搭配粉紅教堂超好拍！），務必穿好走的鞋並攜帶陽傘與防曬乳。',
+        items: [
+          {
+            id: 'd2-1',
+            category: '食物',
+            time: '09:00',
+            title: 'Bánh Mì Huynh Hoa 越式法國麵包',
+            desc: '胡志明超人氣排隊名店！外酥內軟法包夾滿多層火腿、肉鬆與濃郁肝醬，份量十足建議分食。',
+            tags: ['必吃'],
+            mapQuery: 'Banh Mi Huynh Hoa Ho Chi Minh'
+          },
+          {
+            id: 'd2-2',
+            category: '食物',
+            time: '10:30',
+            title: '% Arabica, The Cafe Apartments 咖啡公寓',
+            desc: '老宅改建的九層樓文青咖啡公寓，必訪極簡純白 % Arabica 俯瞰阮惠街步行街風景。',
+            tags: ['必吃', '必拍'],
+            mapQuery: 'The Cafe Apartments 42 Nguyen Hue Ho Chi Minh'
+          },
+          {
+            id: 'd2-3',
+            category: '購物',
+            time: '12:00',
+            title: 'The E.Y.E Saigon 帆布袋',
+            desc: '充滿越南在地幽默插畫與設計感的文創帆布袋專賣店，質感厚實超適合當伴手禮。',
+            tags: ['必買'],
+            mapQuery: 'The E.Y.E Saigon Ho Chi Minh'
+          },
+          {
+            id: 'd2-4',
+            category: '景點',
+            time: '13:30',
+            title: '新定教堂 Tân Định Church (粉紅教堂)',
+            desc: '夢幻糖果粉紅色哥德式外觀教堂，陽光灑落時隨手一拍都是明信片大片！',
+            tags: ['必拍'],
+            mapQuery: 'Tan Dinh Church Ho Chi Minh'
+          },
+          {
+            id: 'd2-5',
+            category: '購物',
+            time: '14:45',
+            title: 'EQL Apparel 運動服飾',
+            desc: '越南本地高質感運動休閒服飾品牌，剪裁俐落且布料親膚透氣。',
+            tags: ['必買'],
+            mapQuery: 'EQL Apparel Ho Chi Minh'
+          },
+          {
+            id: 'd2-6',
+            category: '景點',
+            time: '16:00',
+            title: '胡志明市書街 Book Street',
+            desc: '位於紅教堂旁的林蔭大道文青書店街，集結特色書屋、黑膠唱片與露天咖啡座。',
+            tags: ['必拍'],
+            mapQuery: 'Ho Chi Minh City Book Street'
+          },
+          {
+            id: 'd2-7',
+            category: '食物',
+            time: '18:00',
+            title: '鴉片工廠 The Refinery 或 Le Corto',
+            desc: '充滿法式殖民浪漫風情的庭園餐廳，享用精緻法越創意料理晚餐。',
+            tags: ['必吃'],
+            mapQuery: 'The Refinery Saigon'
+          },
+          {
+            id: 'd2-8',
+            category: '活動',
+            time: '19:45',
+            title: 'Norah Spa 芳療按摩',
+            desc: '在靜謐優雅的空間享受全身精油芳療按摩，徹底舒緩一整天步行的疲勞。',
+            tags: ['放鬆'],
+            mapQuery: 'Norah Spa Ho Chi Minh'
+          },
+          {
+            id: 'd2-9',
+            category: '購物',
+            time: '21:00',
+            title: 'LÀMIN APPAREL & LIBÉ Nguyễn Trãi',
+            desc: '逛逛越南最受歡迎的本土設計師女裝品牌，款式時髦好搭且價格親民。',
+            tags: ['必買'],
+            mapQuery: 'LIBE Nguyen Trai Ho Chi Minh'
+          },
+          {
+            id: 'd2-10',
+            category: '食物',
+            time: '22:00',
+            title: 'Mùa Craft Saké 清酒餐酒館',
+            desc: '使用越南本土稻米釀造的精釀清酒，搭配創意下酒菜，微醺結束充實的一天。',
+            tags: ['必吃'],
+            mapQuery: 'Mua Craft Sake Ho Chi Minh'
+          },
+          {
+            id: 'd2-11',
+            category: '酒店',
+            time: '23:15',
+            title: '返回胡志明 Airbnb 休息',
+            desc: '整理今日戰利品，養精蓄銳準備明天飛往海濱城市芽莊！',
+            tags: [],
+            mapQuery: 'District 1 Ho Chi Minh City'
+          }
+        ]
+      },
+      {
+        dayNum: 3,
+        shortDate: '04/04',
+        weekday: '日',
+        fullDate: '04/04 (日)',
+        city: '胡志明 → 芽莊 Nha Trang',
+        weatherPill: '🌤️ 27°~33°C',
+        outfitAdvice: '搭國內線班機建議輕便好穿脫的服裝，抵達海濱城市芽莊後微風徐徐，可換上度假感長裙或亞麻襯衫。',
+        items: [
+          {
+            id: 'd3-1',
+            category: '食物',
+            time: '09:00',
+            title: 'The Running Bean - Coffee and Brunch',
+            desc: '胡志明人氣質感早午餐店，推薦蛋料理、酪梨吐司與手沖精品咖啡。',
+            tags: ['必吃'],
+            mapQuery: 'The Running Bean Ho Chi Minh'
+          },
+          {
+            id: 'd3-2',
+            category: '購物',
+            time: '10:30',
+            title: 'Forward Perfume 香氛',
+            desc: '探索越南小眾質感香水品牌，挑選專屬這趟旅程的木質調或花果香氛。',
+            tags: ['必買'],
+            mapQuery: 'Forward Perfume Ho Chi Minh'
+          },
+          {
+            id: 'd3-3',
+            category: '購物',
+            time: '11:15',
+            title: 'Star Kitchen Souvenir Gift Shop',
+            desc: '日系精緻風格的越南伴手禮店，推薦法國麵包脆餅與特色包裝茶葉。',
+            tags: ['必買'],
+            mapQuery: 'Star Kitchen Souvenir Gift Shop Ho Chi Minh'
+          },
+          {
+            id: 'd3-4',
+            category: '酒店',
+            time: '12:00',
+            title: '12:00 胡志明 Airbnb 退房',
+            desc: '確認護照與隨身物品，搭乘 Grab 前往新山一國內線航廈。',
+            tags: ['重要'],
+            mapQuery: 'Tan Son Nhat Domestic Terminal'
+          },
+          {
+            id: 'd3-5',
+            category: '交通',
+            time: '14:30 - 15:35',
+            title: '越捷航空 VJ600 (Deluxe) 飛往芽莊',
+            desc: '14:30 胡志明出發 → 15:35 抵達芽莊金蘭機場，04 Apr 2027。',
+            tags: ['重要'],
+            mapQuery: 'Cam Ranh International Airport'
+          },
+          {
+            id: 'd3-6',
+            category: '酒店',
+            time: '16:45',
+            title: 'Boma Resort Nha Trang Check-in',
+            desc: '入住絕美海景度假村！可順便預約明天早上的晨間瑜珈與免費接駁車。',
+            tags: ['必拍'],
+            mapQuery: 'Boma Resort Nha Trang'
+          },
+          {
+            id: 'd3-7',
+            category: '食物',
+            time: '18:30',
+            title: 'Pizza 4P\'s Nha Trang',
+            desc: '越南必吃神級手工窯烤披薩！必點招牌布拉塔起司（Burrata）與蟹肉義大利麵。',
+            tags: ['必吃'],
+            mapQuery: 'Pizza 4Ps Nha Trang'
+          },
+          {
+            id: 'd3-8',
+            category: '活動',
+            time: '20:30',
+            title: 'GRAND SPA 芽莊頂級按摩',
+            desc: '在芽莊的第一晚享受溫潤熱石與精油按摩，伴隨海浪聲入眠。',
+            tags: ['放鬆'],
+            mapQuery: 'Grand Spa Nha Trang'
+          }
+        ]
+      },
+      {
+        dayNum: 4,
+        shortDate: '04/05',
+        weekday: '一',
+        fullDate: '04/05 (一)',
+        city: '芽莊度假村慢活',
+        weatherPill: '☀️ 26°~32°C',
+        outfitAdvice: '芽莊陽光燦爛（約 26°C-32°C），白天請準備美美的泳衣、罩衫與太陽眼鏡，晚上前往高空餐廳可帶件薄針織外套。',
+        items: [
+          {
+            id: 'd4-1',
+            category: '活動',
+            time: '07:00 - 07:30',
+            title: 'Boma Resort 晨間瑜珈 (週一限定)',
+            desc: '面對大海呼吸晨光！週一 07:00-07:30 舉辦，最多限 10 人參加，記得提前向櫃檯預約。',
+            tags: ['放鬆'],
+            mapQuery: 'Boma Resort Nha Trang'
+          },
+          {
+            id: 'd4-2',
+            category: '食物',
+            time: '08:00',
+            title: '飯店悠閒早餐 ＋ 回房補眠',
+            desc: '享用豐盛的度假村海景早餐，吃完回房間吹冷氣補眠，貫徹「慢慢遊」精神！',
+            tags: ['放鬆'],
+            mapQuery: 'Boma Resort Nha Trang'
+          },
+          {
+            id: 'd4-3',
+            category: '活動',
+            time: '13:30',
+            title: 'Boma Resort 無邊際泳池與健身房',
+            desc: '午後在度假村泳池畔躺椅放空、戲水拍美照，或去健身房活動筋骨（也可體驗館內手作）。',
+            tags: ['必拍'],
+            mapQuery: 'Boma Resort Nha Trang'
+          },
+          {
+            id: 'd4-4',
+            category: '交通',
+            time: '14:00 / 16:30',
+            title: '飯店免費接駁車 Shuttle Bus',
+            desc: 'Route 1 往 Ana Beach (14:00去/17:00回) 或 Route 2 往市區 Gold Coast Mall (14:00去/16:35回)，需提前1小時預約。',
+            tags: ['重要'],
+            mapQuery: 'Gold Coast Mall Nha Trang'
+          },
+          {
+            id: 'd4-5',
+            category: '食物',
+            time: '18:30',
+            title: 'Skylight & Lá Kitchen 高空景觀餐廳',
+            desc: '俯瞰 360 度芽莊夜景與海岸線的高空餐廳酒吧，品嚐精緻現代越式料理。',
+            tags: ['必吃', '必拍'],
+            mapQuery: 'Skylight Nha Trang'
+          },
+          {
+            id: 'd4-6',
+            category: '購物',
+            time: '20:30',
+            title: 'GO! Nha Trang 超市大採買',
+            desc: '超好逛的大型超市！一次掃貨 G7/中原咖啡、帶皮腰果、椰子餅與河粉泡麵。',
+            tags: ['必買'],
+            mapQuery: 'GO Nha Trang'
+          }
+        ]
+      },
+      {
+        dayNum: 5,
+        shortDate: '04/06',
+        weekday: '二',
+        fullDate: '04/06 (二)',
+        city: '芽莊溫泉 → 夜臥巴士',
+        weatherPill: '🌤️ 26°~31°C',
+        outfitAdvice: '泡泥漿浴請穿著深色或舊泳衣（現場亦提供租借）；晚上搭乘臥鋪巴士車內冷氣較冷，務必穿著長袖長褲並帶上頸枕與眼罩。',
+        items: [
+          {
+            id: 'd5-1',
+            category: '活動',
+            time: '10:00',
+            title: 'Hot mineral springs I-Resort 泥漿浴',
+            desc: '芽莊必體驗的天然礦物泥漿浴與溫泉水療園區，泡完皮膚滑嫩超舒壓！',
+            tags: ['必拍', '放鬆'],
+            mapQuery: 'I-Resort Nha Trang'
+          },
+          {
+            id: 'd5-2',
+            category: '食物',
+            time: '13:30',
+            title: 'Ăn Thôi 或 Bánh Mì Phan',
+            desc: '品嚐芽莊在地高評價越式家常菜餐廳 Ăn Thôi，或外帶香脆可口的 Bánh Mì Phan 法包。',
+            tags: ['必吃'],
+            mapQuery: 'An Thoi Restaurant Nha Trang'
+          },
+          {
+            id: 'd5-3',
+            category: '活動',
+            time: '16:30',
+            title: 'CHARM SPA Garden Nha Trang 越式洗髮',
+            desc: '搭夜車前來場頂級草本頭療與越式洗髮按摩，讓頭髮香噴噴、身心輕盈上車！',
+            tags: ['放鬆'],
+            mapQuery: 'Charm Spa Garden Nha Trang'
+          },
+          {
+            id: 'd5-4',
+            category: '交通',
+            time: '22:00',
+            title: '搭乘臥鋪巴士返回胡志明市',
+            desc: '體驗越南特色豪華臥鋪巴士（Sleeping Bus）夜間移動，睡一覺直達胡志明市。',
+            tags: ['重要'],
+            mapQuery: 'Nha Trang Sleeping Bus Station'
+          }
+        ]
+      },
+      {
+        dayNum: 6,
+        shortDate: '04/07',
+        weekday: '三',
+        fullDate: '04/07 (三)',
+        city: '胡志明 → 平安返台',
+        weatherPill: '☀️ 28°~34°C',
+        outfitAdvice: '返程搭機日，建議穿著寬鬆舒適的休閒服裝與厚襪子，隨身攜帶薄外套避免機上著涼。',
+        items: [
+          {
+            id: 'd6-1',
+            category: '交通',
+            time: '08:00',
+            title: '抵達胡志明新山一國際機場 (T2)',
+            desc: '辦理登機報到、行李託運與出境手續，把握最後時間逛逛機場免稅店。',
+            tags: ['重要'],
+            mapQuery: 'Tan Son Nhat International Airport Terminal 2'
+          },
+          {
+            id: 'd6-2',
+            category: '交通',
+            time: '10:50 - 15:20',
+            title: '中華航空 CI782 平安返回台北',
+            desc: '10:50 胡志明新山一 T2 出發 → 15:20 抵達桃園機場 T1，07 Apr 2027，滿載美好回憶回家！',
+            tags: ['重要'],
+            mapQuery: 'Taiwan Taoyuan International Airport Terminal 1'
+          }
+        ]
+      }
+    ];
+
+    const DEFAULT_PACKING = [
+      { id: 'pk-1', text: '護照（效期6個月以上）＋ 越南電子簽證紙本', checked: true },
+      { id: 'pk-2', text: '越南網卡 / eSIM ＋ 行動電源', checked: true },
+      { id: 'pk-3', text: '美金現鈔（至胡志明銀樓換越南盾）＋ 信用卡', checked: false },
+      { id: 'pk-4', text: '高係數防曬乳、太陽眼鏡、遮陽帽/陽傘', checked: false },
+      { id: 'pk-5', text: '泳衣 2 套（度假村美照＋泥漿浴用深色泳衣）', checked: false },
+      { id: 'pk-6', text: '薄長袖外套 / 罩衫（飛機與夜臥巴士冷氣用）', checked: false },
+      { id: 'pk-7', text: '好走的涼鞋 / 休閒鞋（Day 2 市區漫步必備）', checked: false },
+      { id: 'pk-8', text: '個人常備腸胃藥、防蚊液與保濕面膜', checked: false }
+    ];
+
+    // ==================== 3. 狀態管理 (localStorage) ====================
+    const STORAGE_KEY = 'vn_slow_trip_2027_v1';
+    const PACKING_KEY = 'vn_slow_trip_packing_v1';
+
+    let itineraryData = loadItinerary();
+    let packingData = loadPacking();
+    let currentDayIndex = 0; // 0 = Day 1
+
+    function loadItinerary() {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (Array.isArray(parsed) && parsed.length === 6) return parsed;
+        }
+      } catch (e) {
+        console.error('讀取行程資料失敗', e);
+      }
+      return JSON.parse(JSON.stringify(DEFAULT_ITINERARY));
+    }
+
+    function saveItinerary() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(itineraryData));
+      } catch (e) {
+        console.error('儲存行程資料失敗', e);
+      }
+    }
+
+    function loadPacking() {
+      try {
+        const saved = localStorage.getItem(PACKING_KEY);
+        if (saved) return JSON.parse(saved);
+      } catch (e) {}
+      return JSON.parse(JSON.stringify(DEFAULT_PACKING));
+    }
+
+    function savePacking() {
+      try {
+        localStorage.setItem(PACKING_KEY, JSON.stringify(packingData));
+      } catch (e) {}
+    }
+
+    // ==================== 4. UI 渲染函式 ====================
+    function renderDaySelector() {
+      const container = document.getElementById('day-selector');
+      container.innerHTML = itineraryData.map((day, idx) => {
+        const isActive = idx === currentDayIndex;
+        return `
+          <button onclick="selectDay(${idx})"
+            class="btn-bounce shrink-0 px-3.5 py-2 rounded-2xl flex flex-col items-center min-w-[74px] transition-all border ${
+              isActive
+                ? 'bg-cocoa text-white border-cocoa shadow-kawaii-sm'
+                : 'bg-white text-cocoa-light border-milkTea hover:border-sakura-dark'
+            }">
+            <span class="text-[10px] font-black tracking-wider ${isActive ? 'text-sakura' : 'text-cocoa-muted'}">DAY ${day.dayNum}</span>
+            <span class="text-xs font-black mt-0.5">${day.shortDate} (${day.weekday})</span>
+          </button>
+        `;
+      }).join('');
+    }
+
+    function renderCurrentDay() {
+      const day = itineraryData[currentDayIndex];
+      
+      // 更新每日卡片標頭
+      document.getElementById('day-header-badge').textContent = `DAY ${day.dayNum}`;
+      document.getElementById('day-header-date').textContent = day.fullDate;
+      document.getElementById('day-header-city').textContent = day.city;
+      document.getElementById('day-item-count').textContent = `共 ${day.items.length} 個行程`;
+
+      // 更新每日建議穿著與天氣提示
+      document.getElementById('outfit-weather-pill').textContent = day.weatherPill;
+      document.getElementById('outfit-advice-text').textContent = day.outfitAdvice;
+
+      // 渲染景點卡片列表
+      const listEl = document.getElementById('itinerary-list');
+      if (day.items.length === 0) {
+        listEl.innerHTML = `
+          <div class="bg-white/80 rounded-3xl p-8 text-center border-2 border-dashed border-milkTea">
+            <div class="text-3xl mb-2">🍵</div>
+            <p class="text-sm font-bold text-cocoa">這天目前是自由放空時間</p>
+            <p class="text-xs text-cocoa-muted mt-1">點擊右上角「＋新增行程」加入想去的景點吧！</p>
+          </div>
+        `;
+        return;
+      }
+
+      listEl.innerHTML = day.items.map((item, index) => {
+        const cat = CATEGORY_META[item.category] || CATEGORY_META['景點'];
+        const mapSearch = encodeURIComponent(item.mapQuery || item.title);
+        const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${mapSearch}`;
+
+        const tagsHtml = (item.tags || []).map(tag => {
+          const tMeta = TAG_META[tag] || { bg: 'bg-milkTea-light', text: 'text-cocoa', dot: 'bg-cocoa' };
+          return `
+            <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-bold ${tMeta.bg} ${tMeta.text}">
+              <span class="w-1.5 h-1.5 rounded-full ${tMeta.dot}"></span>
+              ${escapeHtml(tag)}
+            </span>
+          `;
+        }).join('');
+
+        return `
+          <article class="bg-white rounded-3xl p-4 shadow-kawaii border border-milkTea/50 transition-all hover:border-sakura-dark animate-fade-up" style="animation-delay: ${index * 0.03}s">
+            <!-- 卡片頂部：分類徽章 + 時間 + 編輯刪除按鈕 -->
+            <div class="flex items-center justify-between gap-2">
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-xl text-xs font-black border ${cat.bg} ${cat.text} ${cat.border}">
+                  <span>${cat.emoji}</span>
+                  <span>${escapeHtml(item.category)}</span>
+                </span>
+                ${item.time ? `<span class="text-xs font-bold text-cocoa-muted bg-snow px-2.5 py-1 rounded-xl border border-milkTea/40"><i class="fa-regular fa-clock mr-1 text-sakura-deep"></i>${escapeHtml(item.time)}</span>` : ''}
+              </div>
+
+              <!-- 編輯與刪除控制 -->
+              <div class="flex items-center gap-1 shrink-0">
+                <button onclick="openItemModal('${item.id}')" title="編輯行程" class="w-7 h-7 rounded-full bg-snow hover:bg-milkTea-light text-cocoa-light hover:text-cocoa flex items-center justify-center text-xs transition">
+                  <i class="fa-solid fa-pen"></i>
+                </button>
+                <button onclick="askDeleteItem('${item.id}')" title="刪除行程" class="w-7 h-7 rounded-full bg-snow hover:bg-rose-50 text-cocoa-light hover:text-rose-500 flex items-center justify-center text-xs transition">
+                  <i class="fa-solid fa-trash-can"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- 景點名稱與描述 -->
+            <div class="mt-2.5">
+              <h4 class="text-[15px] font-black text-cocoa leading-snug">${escapeHtml(item.title)}</h4>
+              ${item.desc ? `<p class="text-xs text-cocoa-light leading-relaxed mt-1 font-medium">${escapeHtml(item.desc)}</p>` : ''}
+            </div>
+
+            <!-- 卡片底部：彩色標籤 + Google Maps 導航按鈕 -->
+            <div class="mt-3 pt-2.5 border-t border-milkTea-light/80 flex items-center justify-between gap-2">
+              <div class="flex items-center gap-1.5 flex-wrap">
+                ${tagsHtml || '<span class="text-[11px] text-cocoa-muted">悠閒慢遊 ✨</span>'}
+              </div>
+
+              <a href="${mapsUrl}" target="_blank" rel="noopener noreferrer"
+                class="btn-bounce shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-2xl bg-milkTea-light hover:bg-milkTea text-cocoa text-xs font-bold border border-milkTea-dark/40 transition">
+                <i class="fa-solid fa-diamond-turn-right text-sakura-deep"></i>
+                <span>導航</span>
+              </a>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    function renderPackingList() {
+      const container = document.getElementById('packing-list');
+      const checkedCount = packingData.filter(i => i.checked).length;
+      document.getElementById('checklist-progress').textContent = `${checkedCount} / ${packingData.length}`;
+
+      container.innerHTML = packingData.map(item => `
+        <label onclick="togglePacking('${item.id}')" class="flex items-center gap-3 p-2.5 rounded-2xl border cursor-pointer transition select-none ${
+          item.checked ? 'bg-sakura-light/60 border-sakura text-cocoa-muted' : 'bg-snow border-milkTea/50 text-cocoa hover:border-sakura-dark'
+        }">
+          <span class="w-5 h-5 rounded-lg flex items-center justify-center text-xs border transition ${
+            item.checked ? 'bg-sakura-deep border-sakura-deep text-white' : 'bg-white border-milkTea-dark text-transparent'
+          }">
+            <i class="fa-solid fa-check"></i>
+          </span>
+          <span class="text-xs font-bold flex-1 ${item.checked ? 'line-through' : ''}">${escapeHtml(item.text)}</span>
+        </label>
+      `).join('');
+    }
+
+    function togglePacking(id) {
+      const target = packingData.find(i => i.id === id);
+      if (target) {
+        target.checked = !target.checked;
+        savePacking();
+        renderPackingList();
+      }
+    }
+
+    // ==================== 5. 分頁與日期切換互動 ====================
+    function selectDay(idx) {
+      currentDayIndex = idx;
+      renderDaySelector();
+      renderCurrentDay();
+      document.getElementById('main-scroll').scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function switchTab(tabName) {
+      const tabs = ['itinerary', 'guide', 'weather'];
+      tabs.forEach(t => {
+        const sec = document.getElementById(`tab-${t}`);
+        const btn = document.getElementById(`nav-${t}`);
+        if (t === tabName) {
+          sec.classList.remove('hidden');
+          btn.classList.add('bg-cocoa', 'text-white', 'shadow-sm', 'font-black');
+          btn.classList.remove('text-cocoa-light', 'font-bold');
+        } else {
+          sec.classList.add('hidden');
+          btn.classList.remove('bg-cocoa', 'text-white', 'shadow-sm', 'font-black');
+          btn.classList.add('text-cocoa-light', 'font-bold');
+        }
+      });
+      document.getElementById('main-scroll').scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ==================== 6. 新增 / 編輯 / 刪除 CRUD 邏輯 ====================
+    let selectedModalCategory = '食物';
+    let selectedModalTags = new Set();
+
+    function renderModalControls() {
+      // 渲染分類選項
+      const catContainer = document.getElementById('category-options');
+      catContainer.innerHTML = Object.keys(CATEGORY_META).map(cat => {
+        const meta = CATEGORY_META[cat];
+        const active = selectedModalCategory === cat;
+        return `
+          <button type="button" onclick="setModalCategory('${cat}')"
+            class="py-2 px-2 rounded-2xl text-xs font-bold flex items-center justify-center gap-1 border transition ${
+              active ? `${meta.bg} ${meta.text} border-cocoa ring-2 ring-cocoa/20` : 'bg-white text-cocoa-light border-milkTea'
+            }">
+            <span>${meta.emoji}</span>
+            <span>${cat}</span>
+          </button>
+        `;
+      }).join('');
+      document.getElementById('item-category').value = selectedModalCategory;
+
+      // 渲染標籤選項
+      const tagContainer = document.getElementById('tag-options');
+      tagContainer.innerHTML = Object.keys(TAG_META).map(tag => {
+        const meta = TAG_META[tag];
+        const active = selectedModalTags.has(tag);
+        return `
+          <button type="button" onclick="toggleModalTag('${tag}')"
+            class="px-3 py-1.5 rounded-full text-xs font-bold border transition flex items-center gap-1.5 ${
+              active ? `${meta.bg} ${meta.text} border-current shadow-xs` : 'bg-white text-cocoa-muted border-milkTea'
+            }">
+            <span class="w-2 h-2 rounded-full ${active ? meta.dot : 'bg-milkTea-dark'}"></span>
+            <span>${tag}</span>
+          </button>
+        `;
+      }).join('');
+    }
+
+    function setModalCategory(cat) {
+      selectedModalCategory = cat;
+      renderModalControls();
+    }
+
+    function toggleModalTag(tag) {
+      if (selectedModalTags.has(tag)) {
+        selectedModalTags.delete(tag);
+      } else {
+        selectedModalTags.add(tag);
+      }
+      renderModalControls();
+    }
+
+    function openItemModal(itemId = null) {
+      const modal = document.getElementById('item-modal');
+      const titleEl = document.getElementById('modal-title');
+      const editIdInput = document.getElementById('edit-item-id');
+      const timeInput = document.getElementById('item-time');
+      const nameInput = document.getElementById('item-title');
+      const descInput = document.getElementById('item-desc');
+      const mapInput = document.getElementById('item-map-query');
+
+      if (itemId) {
+        // 編輯模式
+        const day = itineraryData[currentDayIndex];
+        const item = day.items.find(i => i.id === itemId);
+        if (!item) return;
+
+        titleEl.innerHTML = '<span>✏️ 編輯行程卡片</span>';
+        editIdInput.value = item.id;
+        selectedModalCategory = item.category || '食物';
+        selectedModalTags = new Set(item.tags || []);
+        timeInput.value = item.time || '';
+        nameInput.value = item.title || '';
+        descInput.value = item.desc || '';
+        mapInput.value = item.mapQuery || '';
+      } else {
+        // 新增模式
+        titleEl.innerHTML = `<span>✨ 新增 Day ${itineraryData[currentDayIndex].dayNum} 行程</span>`;
+        editIdInput.value = '';
+        selectedModalCategory = '食物';
+        selectedModalTags = new Set(['必吃']);
+        timeInput.value = '';
+        nameInput.value = '';
+        descInput.value = '';
+        mapInput.value = '';
+      }
+
+      renderModalControls();
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeItemModal() {
+      const modal = document.getElementById('item-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function saveItemForm(event) {
+      event.preventDefault();
+      const editId = document.getElementById('edit-item-id').value;
+      const category = document.getElementById('item-category').value;
+      const time = document.getElementById('item-time').value.trim();
+      const title = document.getElementById('item-title').value.trim();
+      const desc = document.getElementById('item-desc').value.trim();
+      const mapQuery = document.getElementById('item-map-query').value.trim() || title;
+      const tags = Array.from(selectedModalTags);
+
+      if (!title) return;
+
+      const day = itineraryData[currentDayIndex];
+      if (editId) {
+        const idx = day.items.findIndex(i => i.id === editId);
+        if (idx !== -1) {
+          day.items[idx] = { ...day.items[idx], category, time, title, desc, tags, mapQuery };
+        }
+        showToast('行程已更新 ✨');
+      } else {
+        day.items.push({
+          id: 'custom-' + Date.now(),
+          category,
+          time,
+          title,
+          desc,
+          tags,
+          mapQuery
+        });
+        showToast('已新增行程卡片 🌸');
+      }
+
+      saveItinerary();
+      renderCurrentDay();
+      closeItemModal();
+    }
+
+    // 自訂確認視窗邏輯
+    let pendingConfirmAction = null;
+
+    function openConfirmModal(title, message, onConfirm) {
+      document.getElementById('confirm-title').textContent = title;
+      document.getElementById('confirm-message').textContent = message;
+      pendingConfirmAction = onConfirm;
+      const modal = document.getElementById('confirm-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeConfirmModal() {
+      const modal = document.getElementById('confirm-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      pendingConfirmAction = null;
+    }
+
+    document.getElementById('confirm-yes-btn').addEventListener('click', () => {
+      if (typeof pendingConfirmAction === 'function') {
+        pendingConfirmAction();
+      }
+      closeConfirmModal();
+    });
+
+    function askDeleteItem(itemId) {
+      const day = itineraryData[currentDayIndex];
+      const item = day.items.find(i => i.id === itemId);
+      if (!item) return;
+
+      openConfirmModal(
+        '刪除這張行程卡片？',
+        `確定要移除「${item.title}」嗎？`,
+        () => {
+          day.items = day.items.filter(i => i.id !== itemId);
+          saveItinerary();
+          renderCurrentDay();
+          showToast('已刪除行程 🗑️');
+        }
+      );
+    }
+
+    function confirmResetData() {
+      openConfirmModal(
+        '恢復預設行程？',
+        '這將會清除你手動新增或修改的內容，並重新載入《2027 胡志明＋芽莊》原始完整行程表。',
+        () => {
+          itineraryData = JSON.parse(JSON.stringify(DEFAULT_ITINERARY));
+          saveItinerary();
+          renderDaySelector();
+          renderCurrentDay();
+          showToast('已恢復為原始完整行程 ✨');
+        }
+      );
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.remove('opacity-0');
+      setTimeout(() => {
+        toast.classList.add('opacity-0');
+      }, 2000);
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    // ==================== 7. 初始化啟動 ====================
+    window.addEventListener('DOMContentLoaded', () => {
+      renderDaySelector();
+      renderCurrentDay();
+      renderPackingList();
+    });
+  </script>
+</body>
+</html>
