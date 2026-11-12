@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f3e5dc">
+<title>越南慢慢旅行｜胡志明 × 芽莊 2027</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap');
+:root{--tea:#f3e5dc;--cream:#fbf7f2;--pink:#e8c6c5;--yellow:#f7e6a8;--ink:#72594c;--muted:#9b8173;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#fbf5ef,#f7e9e4 55%,#fff9e9);color:var(--ink);font-family:"Zen Maru Gothic","Noto Sans TC",sans-serif}
+header{padding:26px 18px 20px;background:linear-gradient(145deg,#f2dfd4,#f8e9e5);border-radius:0 0 30px 30px}
+.wrap{max-width:760px;margin:auto}.eyebrow{font-size:11px;letter-spacing:2px;color:#a18170;font-weight:700}.hero h1{font-size:clamp(27px,7vw,42px);line-height:1.25;margin:8px 0 3px}.hero p{margin:0;color:#a47c78}.hero-art{margin-top:18px;min-height:155px;border-radius:22px;background:linear-gradient(120deg,#e7c8c0,#f7e8d4 52%,#d7e8df);display:grid;place-items:center;overflow:hidden;position:relative}.hero-art:before{content:"🌴";font-size:76px;position:absolute;left:8%;bottom:-8px;opacity:.85}.hero-art:after{content:"☀️";font-size:65px;position:absolute;right:9%;top:10px}.hero-art span{font-size:clamp(19px,5vw,30px);font-weight:900;color:#fff;text-shadow:0 2px 10px #9e7c7080;z-index:1}
+main{padding:16px 14px 100px}.tabs{display:flex;gap:8px;position:sticky;top:8px;z-index:5;background:#fbf7f2dd;backdrop-filter:blur(12px);padding:7px;border-radius:18px;margin:0 0 16px;box-shadow:0 4px 18px #80665312}.tabs button,.daybtn,.action{border:0;border-radius:14px;padding:11px 13px;font:inherit;font-weight:700;cursor:pointer}.tabs button{flex:1;background:#fff;color:var(--muted)}.tabs button.active{background:#dcb8b6;color:#fff}
+.panel{display:none}.panel.active{display:block}.daygrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}.daybtn{background:#fff;border:1px solid #eadbd2;color:var(--ink);font-size:13px}.daybtn.active{background:#f0d9d5;border:2px solid #c89591}.daybtn small{display:block;font-weight:400;color:#a08476;margin-top:3px}.dayhead,.card,.guidebox,.weatherbox{background:#fff;border:1px solid #efe3dc;border-radius:21px;padding:16px;margin:12px 0;box-shadow:0 5px 18px #8066530c}.dayhead{background:#f3e5dc}.dayhead h2{margin:0 0 4px;font-size:22px}.sub{font-size:12px;color:var(--muted)}.card h3{margin:8px 0 6px;font-size:18px}.card p{margin:5px 0 12px;line-height:1.7;font-size:14px;color:#856e61}.tag{display:inline-block;border-radius:99px;padding:4px 10px;background:#f8edcf;color:#9b7b35;font-size:11px;font-weight:700}.category{background:#f4e9e2;color:#997867;margin-right:6px}.tip{background:#fcf5f1;padding:11px;border-radius:13px;font-size:13px;line-height:1.6;margin:10px 0}.meta{font-size:12px;line-height:1.7;color:#927d70;margin:8px 0}.action{display:block;text-align:center;text-decoration:none;background:#f0e2d9;color:#816657;margin-top:10px}.note{width:100%;min-height:70px;border:1px solid #eadbd2;border-radius:12px;padding:10px;font:inherit;font-size:13px;color:var(--ink)}.photo{font-size:12px;margin-top:8px;color:#9a8375}.photo img{display:block;max-width:100%;max-height:220px;border-radius:12px;margin-top:8px}.guidebox h3,.weatherbox h3{margin:0 0 10px}.guidebox p,.weatherbox p,.guidebox li{font-size:14px;line-height:1.8;color:#856e61}.guidebox table{width:100%;border-collapse:collapse;font-size:13px}.guidebox td,.guidebox th{padding:8px;border-bottom:1px solid #f0e5de;text-align:left}.bottom{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);width:min(92%,440px);background:#fffE;border:1px solid #eee0d7;border-radius:22px;padding:10px;text-align:center;color:#a18170;font-size:11px;box-shadow:0 8px 28px #604b3b20;backdrop-filter:blur(12px)}
+footer{text-align:center;color:#a78c7d;font-size:11px;padding:20px}
+@media(min-width:650px){main{padding-left:22px;padding-right:22px}.daygrid{grid-template-columns:repeat(6,1fr)}}
+</style></head>
+<body>
+<header><div class="wrap hero"><div class="eyebrow">MY VIETNAM TRAVEL BOOK · VOL. 2027</div><h1>越南慢慢旅行 ♡</h1><p>胡志明 × 芽莊　｜　2027.04.02 — 04.07 · 6 DAYS</p><div class="hero-art"><span>SAIGON × NHA TRANG</span></div></div></header>
+<main class="wrap">
+<nav class="tabs"><button class="active" data-tab="itinerary">行程</button><button data-tab="guide">指南</button><button data-tab="weather">天氣</button></nav>
+<section id="itinerary" class="panel active"><div class="eyebrow">DAILY ITINERARY</div><div id="days" class="daygrid"></div><div id="daycontent"></div></section>
+<section id="guide" class="panel">
+<div class="eyebrow">TRAVEL GUIDE</div>
+<div class="guidebox"><h3>🚌 BOMA Resort 飯店接駁車</h3><p>依你提供的 PDF 第 2 頁整理；出發前請向飯店確認 2027 實際班次及預約方式。</p><b>Beach Shuttle｜BOMA → ANA BEACH</b><table><tr><th>去程</th><th>回程</th></tr><tr><td>09:30</td><td>11:30</td></tr><tr><td>14:00</td><td>17:00</td></tr></table><br><b>City Center Shuttle</b><table><tr><th>目的地</th><th>去程</th><th>回程</th></tr><tr><td>Gold Coast Mall</td><td>10:30</td><td>14:35</td></tr><tr><td>AB Central Mall</td><td>10:30</td><td>14:30</td></tr><tr><td>Gold Coast Mall</td><td>14:00</td><td>16:35</td></tr><tr><td>AB Central Mall</td><td>14:00</td><td>16:30</td></tr></table></div>
+<div class="guidebox"><h3>🧘 BOMA 活動安排</h3><p>依 PDF 第 2 頁活動表：07:00–07:30 晨間瑜珈；07:30–09:00、10:00–12:00、14:00–15:00 為其他活動時段。實際內容、費用及預約以飯店公告為準。</p></div>
+<div class="guidebox"><h3>🧳 出發行李清單</h3><div id="packing"></div></div>
+<div class="guidebox"><h3>🚗 交通提醒</h3><p>胡志明市及芽莊可用 Grab 串接行程，芽莊優先確認飯店接駁車。原始 PDF 未提供自駕安排，因此停車與加油資訊均標示為待確認，不會臆測實際地點。</p></div>
+</section>
+<section id="weather" class="panel"><div class="eyebrow">WEATHER & OUTFIT</div>
+<div class="weatherbox"><h3>☀️ 4 月季節穿搭參考</h3><p>胡志明市與芽莊通常炎熱，實際逐日天氣需接近出發時查詢；以下不是 2027 即時預報。</p></div>
+<div class="weatherbox"><h3>🌸 胡志明市</h3><p>輕薄透氣上衣、短褲或長裙、舒適涼鞋。室內冷氣較強，可帶薄外套。別忘了防曬、太陽眼鏡及水壺。</p></div>
+<div class="weatherbox"><h3>🌴 芽莊</h3><p>泳衣、罩衫、透氣洋裝、涼鞋、遮陽帽及太陽眼鏡。午後可能有短暫降雨，可準備折疊傘。</p></div>
+<div class="weatherbox"><h3>🔎 出發前查詢</h3><p><a href="https://www.accuweather.com/" target="_blank" rel="noopener">AccuWeather 天氣預報</a></p></div>
+</section>
+<footer>♡ GOOD TRIPS, GOOD MEMORIES ♡<br>SAIGON × NHA TRANG · APRIL 2027</footer>
+</main><div class="bottom">♡ MY TRAVEL JOURNAL　·　SAVE YOUR MEMORIES ♡</div>
+<script>
+const days=[
+["04/02","FRI","胡志明市",[
+["酒店","Airbnb","抵達胡志明市，入住民宿、整理行李。","入住","拍攝民宿房間與旅行第一天的紀念照。","依民宿規定確認停車。","建議使用 Grab。"],
+["食物","Phở Việt Nam","品嚐越南經典河粉，開啟越南美食之旅。","必吃","拍攝河粉配料與桌面上的越南調味料。","停車資訊依分店確認。","Grab / 步行。"],
+["活動","Lisa Nail & Spa","安排美甲，享受抵達後的放鬆時光。","體驗","拍攝美甲成果與旅行穿搭合照。","停車資訊待確認。","Grab。"]]],
+["04/03","SAT","胡志明市",[
+["食物","Bánh Mì Huynh Hoa","品嚐胡志明知名越南法國麵包。","必吃","近距離拍攝豐富內餡與酥脆麵包。","停車資訊待確認。","建議 Grab。"],
+["食物","% Arabica · The Cafe Apartments","前往公寓咖啡大樓，享受咖啡與特色建築。","必拍","利用公寓外觀、窗戶與咖啡杯構圖。","周邊停車需另查。","建議步行串接周邊景點。"],
+["購物","The E.Y.E Saigon","選購特色帆布袋。","必買","拍攝帆布袋與街景穿搭照。","停車資訊待確認。","步行 / Grab。"],
+["景點","新定教堂","參觀胡志明市著名粉紅色教堂。","必拍","利用粉紅色外牆與藍天拍攝全景。","停車資訊待確認。","Grab。"],
+["購物","EQL Apparel","逛逛越南運動服飾品牌。","必買","拍攝喜歡的運動穿搭。","停車資訊待確認。","Grab。"],
+["景點","胡志明市書街","漫步書店街，感受越南城市的文藝氣息。","必拍","利用書店、綠樹與街道拍攝生活感照片。","停車資訊待確認。","建議步行。"],
+["食物","鴉片工廠 or Le Corto","二選一安排晚餐，保留原始餐廳選擇。","晚餐","拍攝餐廳氣氛與精緻餐點。","依餐廳確認。","Grab。"],
+["活動","Norah Spa","安排 SPA 放鬆，舒緩整天走路的疲勞。","體驗","拍攝療癒的空間與細節。","停車資訊待確認。","Grab。"],
+["購物","LÀMIN APPAREL","越南服飾購物行程。","必買","記錄當天最喜歡的穿搭。","停車資訊待確認。","Grab。"],
+["購物","LIBÉ Nguyễn Trãi","逛逛越南當地服飾品牌。","必買","拍攝店面與購物戰利品。","停車資訊待確認。","Grab。"],
+["食物","Mùa Craft Saké","安排晚間餐飲與休閒時光。","夜間行程","拍攝店內氛圍與飲品。","停車資訊待確認。","Grab；飲酒勿駕車。"],
+["酒店","Airbnb","返回民宿休息。","住宿","整理今日購物戰利品。","依民宿規定確認。","Grab。"]]],
+["04/04","SUN","胡志明市 → 芽莊",[
+["食物","The Running Bean - Coffee and Brunch","享用早午餐，為退房及移動做準備。","必吃","拍攝咖啡與早午餐的桌面俯拍照。","停車資訊待確認。","Grab。"],
+["購物","Forward Perfume","香氛購物，尋找喜歡的香氣。","必買","拍攝香水瓶與包裝細節。","停車資訊待確認。","Grab。"],
+["購物","Star Kitchen Souvenir Gift Shop","採購越南伴手禮。","必買","拍攝伴手禮包裝與購物戰利品。","停車資訊待確認。","Grab。"],
+["交通","Airbnb 退房","中午 12:00 退房，前往新山一國際機場。","CHECK-OUT","離開前確認護照、行李與隨身物品。","停車資訊待確認。","預留前往機場的交通時間。"],
+["交通","新山一國際機場","搭乘航班前往芽莊，實際航班時間待確認。","移動日","拍攝機場登機及旅行轉場照片。","依機場公告。","確認航班及芽莊接送。"],
+["酒店","BOMA Resort","抵達芽莊後入住海景度假飯店，開始度假模式。","入住","拍攝飯店泳池、海景及房間陽台。","飯店停車規則待確認。","可詢問飯店接送服務。"],
+["食物","Pizza 4P's","安排披薩晚餐。","必吃","拍攝起司牽絲與披薩特寫。","依分店確認。","Grab。"],
+["活動","GRAND SPA","安排 SPA 體驗，放鬆旅行疲勞。","體驗","拍攝 SPA 空間與療癒氛圍。","停車資訊待確認。","確認預約及接送方式。"]]],
+["04/05","MON","芽莊 · BOMA Resort",[
+["活動","飯店晨間瑜珈","早起參加飯店瑜珈課程，開啟悠閒的一天。","必體驗","拍攝海景瑜珈、晨光及伸展剪影。","飯店內活動。","步行前往活動場地。"],
+["食物","飯店早餐","享用早餐後回房補眠。","享受假期","拍攝早餐與度假早晨的氛圍。","飯店內。","步行。"],
+["活動","BOMA 泳池","下午在飯店泳池放鬆、玩水。","必拍","使用廣角拍攝泳池與海景，人物可拍背影。","飯店內。","步行。"],
+["活動","BOMA 健身房","自由安排健身與飯店設施體驗。","自由活動","拍攝度假運動日常。","飯店內。","步行。"],
+["食物","Skylight & Lá Kitchen","依原行程安排芽莊市區餐飲。","必吃","拍攝餐點與芽莊夜景。","依店家確認。","可搭飯店 City Center Shuttle 或 Grab。"],
+["購物","GO! Nha Trang","前往超市採買飲料、零食與日用品。","必逛","拍攝越南零食及特色商品。","依現場公告。","可搭飯店 City Center Shuttle。"]]],
+["04/06","TUE","芽莊 → 胡志明市",[
+["景點","Hot Mineral Springs I-Resort","體驗芽莊泥漿浴與溫泉設施，享受度假療癒時光。","必體驗","拍攝園區綠意、溫泉及泥漿浴體驗。","園區停車資訊待確認。","Grab。"],
+["食物","Ăn Thôi or Banh Mi Phan","午餐二選一，保留兩個原始選項。","必吃","拍攝越南料理及在地街頭美食。","依店家確認。","Grab。"],
+["活動","CHARM SPA Garden Nha Trang","體驗越式洗髮，安排離開芽莊前的放鬆行程。","必體驗","拍攝洗髮過程與特色 SPA 空間。","停車資訊待確認。","Grab。"],
+["交通","芽莊 → 胡志明市臥鋪巴士","搭乘臥鋪巴士返回胡志明市，車班與上車地點待確認。","交通","拍攝臥鋪巴士內部，準備眼罩及耳塞。","不適用。","提前確認乘車站、行李規定與抵達時間。"]]],
+["04/07","WED","胡志明市 → 台灣",[
+["交通","新山一國際機場","前往機場，搭乘返台班機，結束越南旅行。","返程","留下最後一張旅行紀念照。","依機場公告。","確認巴士抵達時間與返程航班，預留交通緩衝。"]]]
+];
+let selected=0;
+function renderDays(){document.getElementById('days').innerHTML=days.map((d,i)=>`<button class="daybtn ${i===selected?'active':''}" onclick="selectDay(${i})">${d[0]}<small>${d[1]} · ${d[2]}</small></button>`).join('')}
+function selectDay(i){selected=i;renderDays();renderDay()}
+function renderDay(){let d=days[selected];let clothes=selected<3?'胡志明市：輕薄透氣上衣、短褲或長裙、舒適涼鞋。室內冷氣較強，可帶薄外套。':'芽莊：泳裝、罩衫、透氣洋裝、涼鞋、遮陽帽及太陽眼鏡。SPA 可帶換洗衣物。';document.getElementById('daycontent').innerHTML=`<div class="dayhead"><h2>${d[0]} · ${d[2]}</h2><div class="sub">${d[1]}　·　DAY ${selected+1}　·　${d[3].length} 個行程</div></div>`+d[3].map((x,i)=>{let key=`note-${selected}-${i}`;return `<article class="card"><span class="tag category">${x[0]}</span><span class="tag">${x[3]}</span><h3>${x[1]}</h3><p>${x[2]}</p><div class="tip">📷 <b>拍照小技巧</b><br>${x[4]}</div><div class="meta">🚗 停車：${x[5]}<br>🚕 交通／加油：${x[6]}（原始行程未提供自駕與加油站資訊）</div><a class="action" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x[1]+' Vietnam')}" target="_blank" rel="noopener">📍 Google Maps 導航</a><p><b>♡ 我的旅行紀錄</b></p><textarea class="note" placeholder="今天的回憶、花費、心得..." oninput="localStorage.setItem('${key}',this.value)">${escapeHtml(localStorage.getItem(key)||'')}</textarea><div class="photo">📷 選擇照片（照片僅在此裝置預覽，不會自動分享給朋友）<input type="file" accept="image/*" onchange="previewPhoto(event,'photo-${selected}-${i}')"><img id="photo-${selected}-${i}" hidden></div></article>`}).join('')+`<div class="guidebox"><h3>👗 今日穿搭建議</h3><p>${clothes}</p><h3>☀️ 天氣提示</h3><p>4 月通常炎熱，注意防曬及補充水分。午後可能有短暫降雨，出門可帶折疊傘。這是季節性參考，不是即時預報。</p></div>`}
+function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function previewPhoto(e,id){let f=e.target.files[0];if(!f)return;let img=document.getElementById(id);img.src=URL.createObjectURL(f);img.hidden=false}
+document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.panel').forEach(x=>x.classList.toggle('active',x.id===b.dataset.tab))}));
+document.getElementById('packing').innerHTML=['護照、機票、住宿資料','越南盾、信用卡','防曬乳、太陽眼鏡','泳衣、泳帽、罩衫','薄外套、換洗衣物','防蚊液、常備藥品','充電器、行動電源','臥鋪巴士用眼罩、耳塞'].map((x,i)=>`<label style="display:block;margin:9px 0;font-size:14px"><input type="checkbox"> ${x}</label>`).join('');
+renderDays();renderDay();
+</script></body></html>
